@@ -2,6 +2,7 @@
 layout: post
 title:  "Permaculture Network"
 date:  2020-05-26 10:23:58
+description: on cellular automata
 tags: automata, permaculture, sakiya
 status: published
 ---
