@@ -3,7 +3,11 @@
 /*my own, gross, css (should be a separate file really, ha ha)*/
 
 .header {
-    height: 100px;
+    height: 50px;
+    position: fixed;
+    background-color: white;
+    top: 0px;
+    width: 100%;
 }
 
 .header a {
@@ -14,7 +18,7 @@
 }
 
 .header img {
-    height: 60%;
+    height: 100%;
     max-width: 60px;
     display: inline-block;
     vertical-align: middle;

@@ -7,9 +7,11 @@ layout: main
 <section>
 	<ul class="noPoints">
 	{% for post in site.posts %}
-		<li class="mainList">
-			{{ post.date | date: "%m/%d" }}  <a href="{{ post.url }}">{{ post.title }}</a> <br>
-		</li>
+		{% if post.status == 'published' %}
+			<li class="mainList">
+				{{ post.date | date: "%m/%d" }}  <a href="{{ post.url }}">{{ post.title }}</a> <br>
+			</li>
+		{% endif %}
 	{% endfor %}
 	</ul>
 </section>

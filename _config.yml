@@ -61,3 +61,6 @@ kramdown:
   input: GFM
 excerpt_separator: <!--more-->
 timezone: America/New_York
+
+plugins:
+  - jekyll-feed
