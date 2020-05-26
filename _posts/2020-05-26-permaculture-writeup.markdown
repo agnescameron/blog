@@ -4,7 +4,7 @@ title:  "Permaculture Network"
 date:  2020-05-26 10:23:58
 description: on cellular automata
 tags: automata, permaculture, sakiya
-status: published
+status: draft
 ---
 
 This is a long-overdue writeup of a project that Gary and I worked on last summer. Parts of it are adapted from answers to questions that different people have asked about the project (*thanks, Callil*), and parts are new. I've been meaning to update the code from this for a while now as an ambition for this project was for it to have a life outside of 
