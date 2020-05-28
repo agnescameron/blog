@@ -2,8 +2,13 @@
   <link rel="shortcut icon" type="image/png" href="{{ '/favicon.png' | prepend: site.baseurl }}">
   <link rel="stylesheet" href="{{ '/css/main.css' | prepend: site.baseurl }}">
   <link rel="alternate" type="application/rss+xml" title="things RSS" href="/feed.xml">
-  <meta name="image" property="og:image" content="{{ '/favicon.png' | prepend: site.baseurl }}"/>
-  <meta name="twitter:image" property="og:image" content="{{ '/favicon.png' | prepend: site.baseurl }}"/>
+  {% if page.image %}
+	<meta name="twitter:card"  content="summary_large_image">
+	<meta name="twitter:image" content="{{ site.url }}{{ page.image }}">
+	{% else %}
+	<meta name="twitter:card"  content="summary">
+	<meta name="twitter:image" content="{{ '/favicon.png' | prepend: site.baseurl }}">
+	{% endif %}
   <title>things from the room in the back</title>
   <meta charset="utf-8">
 </head>
