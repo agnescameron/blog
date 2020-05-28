@@ -1,0 +1,48 @@
+---
+layout: post
+title:  "Sugarscapes"
+date:  2020-01-20 10:23:58
+description: re-creating axtell and epstein's simulation
+tags: robots, agents, automata, sugarscape, simulation
+status: draft
+---
+
+This is a writeup I did a while ago, long since buried on my [personal site](http://agnescameron.info/sugarscapeii.html), which I thought I'd port to this new land (especially given great personal growth in CSS... though perhaps i'm a coward for ditching the gradient). This project has also evolved a lot since I wrote this, and it's been nice to re-visit some of these initial ideas.
+
+In november 2017, I took part in MIT's hacking arts festival, as part of a group of engineers and designers working with CAST resident artist Agnieszka Kurant. The piece -- then known as 'fictional animals operated by thousands of people' -- explored ideas of artificial society and collective behaviour, through the lens of internet-broadcast nature. We met again a few months later to refine the project, which was then written about in SFMOMA's Heavy Machinery. 
+
+The part of this project that I worked on was to build an 'artificial society' simulation. Initially based on Joseph Axtell and David Epstein's *Sugarscape* model, ... ABM which describes.
+
+Since then, I've worked a lot more with Agnieszka on developing this society model for a new piece, *Conversions*, which has since made it to Science Gallery London, and the Istanbul biennale. 
+
+### fictional animals...
+
+
+**cats, bugs and plants**
+
+One of the challenges of the piece was getting the 'fake' livestreams to appear as a real ecosystem. The first attempt placed both the cats and bugs in glass tanks, using an aerial view to capture the motion.
+
+For take 2, the cats were removed from the tank, allowing more room for movement and a better camera angle. This also allowed more of the plants to be seen. A comparison between the two shots is shown below.
+
+
+The surrounding footage (the polar bears and tiger) are from genuine wild animal livestreams, each with thousands of subscribed viewers. 
+
+### the simulation
+
+**adding sentiments**
+
+To map the sentiment data from twitter, we used an NLP library called TweetFeels, which calculates a moving average of a sentiment associated with a particular hashtag every second. The data from this is sent to a sqlite database, which is polled (either live, or after-the-fact) by the sugarscape script. Each point that is recorded is the net result of a collective 'mood' surrounding a subject -- in this case the hashtag protest -- and the bugs' environment shifts according to positive and negative changes in the collective emotion.
+
+**death, trade, descruction**
+
+
+
+**low res/hi res**
+
+One of the open questions I think I still have about this project is 
+
+What are ways of creating an interesting and insightful 'low-dimensional' representation of high-dimensional information? In this case, how do you turn what's 
+
+One of the parts of Julian Jaynes' *Breakdown of the Bicameral Mind* that I really enjoyed was this idea that human speech was this amazingly effective intermediary for a lot of complex ideas: so much so that the idea of the 'voice inside your head' was one that could evolve simply out of necessity for information transfer between the left and right brains.
+
+
