@@ -52,7 +52,7 @@ timezone: America/New_York
 #   - vendor/gems/
 #   - vendor/ruby/
 
-url: 'https://soup.agnescameron.info'
+url: 'https://soup.agnescameron.info/'
 github_username:  agnescameron
 
 # sass:

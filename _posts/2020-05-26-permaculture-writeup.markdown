@@ -5,7 +5,7 @@ date:  2020-05-27
 description: on goats and real/virtual ecologies
 tags: automata, permaculture, sakiya
 status: published
-image: '/img/permaculture/full-sim.png'
+image: 'img/permaculture/full-sim.png'
 ---
 
 This is a long-overdue writeup of a project that Gary and I worked on last summer, as part of a Schloss Solitude Web Residency [*Rigged Systems*](https://schloss-post.com/category/web-residents/rigged-systems/), curated by Jonas Lund. Parts of this are adapted from answers to questions that different people have asked about the project<label for="different-people" class="margin-toggle sidenote-number"></label><input id="different-people" class="margin-toggle"/><span class="sidenote">thanks, <a href="https://callil.com/">Callil</a>, and to Denise Sumi for [interviewing us](https://schloss-post.com/flora-fauna-and-folk-tales/)</span>, and parts are new. An are.na channel for this project exists [here](https://www.are.na/agnes-cameron/permaculture-network), and the code is open-sourced [here](https://github.com/rokeby/permaculture). The simulation itself is online [here](http://root.schloss-post.com/).
