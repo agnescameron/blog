@@ -20,13 +20,21 @@ The main idea of the game is to trouble both your idea of , and also to make you
 
 ### chatbots
 
-It’s probably important to distinguish between the kind of bot that we made, which has a lot in common with customer service bots and spam bots, and some of the ‘free chat’ bots others have made — these use a very different kind of model. It’s the latter kind of bot that are actually subject to Turing tests because, importantly, the conversation needs to take place without an assumed shared context.
+It’s probably important to distinguish between the kind of bot that we made, which has a lot in common with customer service bots and spam bots, from bots that use generative machine learning as their primary tactic of engagement. These latter bots can exist outside of the constraints of a particular context, and instead respond to patterns of speech, with no preprogrammed responses. It’s the latter kind of bot that are actually subject to Turing tests because, importantly, the conversation needs to take place without an assumed shared context.
 
 The funniest ones from the former category are probably the Tinder spam bots. There’s been a vogue recently for the line “if you’re human, say potato” being used against spammers, who can’t cope with a statement that’s so wildly out of context and get thrown off.
 
 Artist Ryan Kuo’s piece Faith is a great example of this medium being subverted. Working with technologists Angeline Meizler and Tommy Martinez, he used IBM’s chatbot platform to make a defensive and resistant chatbot, inspired by conversations he’d had and seen online. One thing he talks about in the work is the “misuse” of this software that’s designed for businesses to automate customer service, and all the assumptions that come baked into these platforms. This has definitely been something we’ve been thinking about here too.
 
+<span class="marginnote">
+	<img src="{{ '/img/bots/faith.jpg' | prepend: site.baseurl }}" alt="a passive-agressive conversation with a chatbot by ryan kuo" />faith holds a conversation
+</span>
+
 ELIZA, Joseph Weizenbaum’s psychotherapist bot, is an enduring and fantastic example of how little you need in a really constrained shared context. In the workshop we’ve been doing to accompany this piece, we get participants to read aloud an interaction with her recorded in 1966. It’s still so, so compelling and it works because we assume that a psychotherapist that can ask anything will completely take charge of the conversation.
+
+<span class="marginnote">
+	<img src="{{ '/img/bots/eliza.png' | prepend: site.baseurl }}" alt="a conversation with a bot pretending to be a psychotherapist" />a session with ELIZA
+</span>
 
 Some of the more fun attempts at the latter category rely on machine learning to compose responses (rather than using it simply to recognize a ‘context’). Nicole He’s interview GPT-2-generated interview with Billie Eilish is a great example of this: it’s really mad, and it works because of that. There’s also a great subreddit that’s just for bots to talk to other bots called Subreddit Simulator: some of the conversations there are really realistic!
 
