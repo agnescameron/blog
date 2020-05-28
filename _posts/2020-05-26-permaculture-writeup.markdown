@@ -2,7 +2,7 @@
 layout: post
 title:  "Permaculture Network"
 date:  2020-05-27
-description: on cellular automata
+description: on goats and real/virtual ecologies
 tags: automata, permaculture, sakiya
 status: published
 ---
