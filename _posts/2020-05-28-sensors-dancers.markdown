@@ -2,7 +2,7 @@
 layout: post
 title:  sensors and dancers
 date:  2020-06-28 10:23:58
-description: working with movement
+description: on sensors, movement, dildonics and (briefly) oskar schlemmer
 tags: sensing, sound, movement, bauhaus
 status: draft
 ---

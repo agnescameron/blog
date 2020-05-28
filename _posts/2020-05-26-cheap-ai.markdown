@@ -1,9 +1,120 @@
 ---
 layout: post
 title:  "chatbots and cheap AI"
-date:  2020-05-26 10:23:58 -0400
+date:  2020-06-01
 description: on weird bots and dumb tricks (dumb bots and weird tricks)
 tags: ai, chatbots
 status: draft
 ---
 
+A few weeks ago, we (Foreign Objects) released a project called [Bot or Not](https://botor.no/), a project that we'd worked on for the Mozilla Creative Media Awards. It's a game where you play 'truth' against a random opponent: at the end, you have to guess whether or not they're human, and they make the same guess about you.
+
+The idea started as something of a joke: the theme of this years' awards was 'examining AI's effect on media and truth', and the idea of a 'truth or dare turing test' was something of a pun on that. We're all interested in different ideas of non-human subjecthood and agency, and right now we're at something of a turning point when it comes to interfacing with non-humans. The proliferation of Amazon Alexa and Google Home bots, the automation of call centers and other service workplaces, the recent public release of Google Duplex: even without the pandemic these things were happening, but right now they've been wildly accelerated.
+
+Inspiration for the project comes from a few places, but one idea we kept coming back to was Judith Donath's essay [*The Robot Dog Fetches for Whom?*](https://medium.com/berkman-klein-center/the-robot-dog-fetches-for-whom-a9c1dd0a458a), which talks about the disconnect between the projected intent of robots that pretend to be human (or canine), and their actual purpose. Bots like Alexa, which assume the affect of a helpful personal assistant, do so because they want to establish a trusting relationship with their user. Unfortunately, Alexa's actual purpose doesn't quite match up: she's cheap and widely available because she's streaming your personal data back to a centralised server, which in turn 'she' uses to advertise new products to you.
+
+We're also very interested in the idea of 'bot speech' (perhaps a topic for another post) -- the speech rights afforded for bots, and what they mean for humans. At least in a U.S. context, bots have some freedom of speech protections under law. Though this sounds somewhat stupid and legalistic, the problem
+
+
+The main idea of the game is to trouble both your idea of , and also to make you think about what it means to sound human online.
+
+### chatbots
+
+It’s probably important to distinguish between the kind of bot that we made, which has a lot in common with customer service bots and spam bots, and some of the ‘free chat’ bots others have made — these use a very different kind of model. It’s the latter kind of bot that are actually subject to Turing tests because, importantly, the conversation needs to take place without an assumed shared context.
+
+The funniest ones from the former category are probably the Tinder spam bots. There’s been a vogue recently for the line “if you’re human, say potato” being used against spammers, who can’t cope with a statement that’s so wildly out of context and get thrown off.
+
+Artist Ryan Kuo’s piece Faith is a great example of this medium being subverted. Working with technologists Angeline Meizler and Tommy Martinez, he used IBM’s chatbot platform to make a defensive and resistant chatbot, inspired by conversations he’d had and seen online. One thing he talks about in the work is the “misuse” of this software that’s designed for businesses to automate customer service, and all the assumptions that come baked into these platforms. This has definitely been something we’ve been thinking about here too.
+
+ELIZA, Joseph Weizenbaum’s psychotherapist bot, is an enduring and fantastic example of how little you need in a really constrained shared context. In the workshop we’ve been doing to accompany this piece, we get participants to read aloud an interaction with her recorded in 1966. It’s still so, so compelling and it works because we assume that a psychotherapist that can ask anything will completely take charge of the conversation.
+
+Some of the more fun attempts at the latter category rely on machine learning to compose responses (rather than using it simply to recognize a ‘context’). Nicole He’s interview GPT-2-generated interview with Billie Eilish is a great example of this: it’s really mad, and it works because of that. There’s also a great subreddit that’s just for bots to talk to other bots called Subreddit Simulator: some of the conversations there are really realistic!
+
+### our bot
+
+The bot was built from a combination of some client-side NLP, and google's Dialogflow service, which is traditionally used to make customer service bots. One of the reasons that both we (and customer service engineers) chose this method is that you get very fine-grained control over what it can and can't say. We wanted to be able to steer the conversation, and also the project was originally for younger people: wanted to be really sure that the bot couldn't accidentally say something hurtful or offensive.
+
+Of course, the downside of this is that all the responses had to be written by us. In some senses this was good, as we got to write a lot of jokes, but it definitely meant that we ran into diminishing returns pretty fast every time we wanted to expand the range of things the bot could say.
+
+**dialogflow**
+
+Dialogflow
+
+- Intents
+- Contexts
+
+**tools and resources**
+
+One of the best online resources for bot-making tactics was 
+
+**the NLP layer(s)**
+
+It became clear pretty early on that the one thing dialogflow was not going to be able to handle was parsing structured queries that involved anything more complex than it's 'entity detection' framework. A classic example of this is the 'would you rather' question: the response to that has to include some part of the initial sentnce
+
+
+
+When you talk to the bot
+
+We got quite excited about the idea of 'cheap AI': 
+
+**logging**
+
+
+**testing**
+
+What was really hard about testing the bot was that, despite best efforts, it was really hard not to bake your own assumptions about how people text into the interface. In our case, with mostly myself and Gary writing and testing the bot's responses, it did really well when we were talking to it (it does, indeed text like us), quite well with Kalli, Sam and other close friends, and it fucking sucked when someone we had nothing in common with tried it.
+
+We rectified some of this
+
+In the future, (see below) I think that the best way to make the bot more robust would be to really up the NLP layer, to better deal with a range of different contexts and people. I think also giving the bot some kind of underlying 'state' that it could use to modulate it's responses 
+
+**leaving the cloud of unknowing**
+
+
+### future bots
+
+The galling thing about any of these projects is that, as soon as you finish, you're immediately filled with ideas of how much better you could have done it. In this case, I think that the main issue was really that trying to deal with all of the things people could say started to feel like whack-a-mole: that, and there was often a degree of repetition dealing with contextual replies, e.g. many different contexts had separate 'what about you' intents to detect a common follow-up from a user.
+
+**underlying behaviours**
+
+One thing that we started doing in a very simple way, but we could really have run with a lot more was to add in an 'underlying' behavioural state for the bot
+
+This was part of the plan initially
+
+In the end, the ways this is triggered is if the player says something either demonstrably cutesy ('owo what's this'), or deliberately aggro ('fuck you you piece of shit'), the bot will adopt a long-lived background context, the fallback of which is either to spout kaomojis, or to shitpost.
+
+Even this simple bit was surprisingly effective, and I think a second pass would have made more of these longer-running contexts to actually modulate the character of the bot depending on what the person they were speaking to was saying. 
+
+**the simplest case**
+
+Without changing much of the underlying architecture, the simplest way to deal with this would be to have a set of stock 'contextual responses' that send a standard, one-word response to dialogflow. E.g, for 'what about you', the parsing layer at the front would contain all the possible versions of that, then send a single 'whataboutyou' string to the backend, making it much quicker to write the training phrases
+
+**an 'intent API'**
+
+Developing on this, 
+
+while still using dialogflow for finer-grained intent detection
+
+breaking sentences into keywords
+
+**generic response generation**
+
+This kind of already exists but could be stepped up
+
+Some questions the bot just wants to keep the context and then be generically 'evasive'
+
+Limitations -- changing case in response to different detected input case is a way to get around it
+
+**of course, at this point...**
+
+...maybe dialogflow isn't even the best tool for the job. After using it for a while you get a fairly clear feel of how the platform works, and, while it's a useful tool in some ways for corralling all of these different sets of intents and responses, it's also:
+
+1. a google product (where a lot of this project is about the problems with surveillent agents)
+2. a pretty janky interface (another change i'd make in the future is to make a CLI for it early on)
+3. there's only so much you can hack a customer service bot into doing what you want, before you're basically writing it yourself anyway
+
+I would say that it works great as aa prototyping tool: in the early stages of the project it was great how quickly you could get it to do things. But after that point it's probably worth exporting the JSON, and making a more suitable backend architecture.
+
+**future bots**
+
+At the moment I'm thinking about writing a 'customer service' bot for the Foreign Objects website (after the attempts to voice clone Slavoj Žižek reading our studio's 'statement of purpose' went so badly).

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Permaculture Network"
+title:  permaculture network
 date:  2020-05-27
 description: on goats and real/virtual ecologies
 tags: automata, permaculture, sakiya
@@ -87,7 +87,7 @@ The plants have some probabilty of appearing on each substrate type, and also on
 
 
 <span class="marginnote">
-	<img src="{{ '/img/permaculture/antar.jpg' | prepend: site.baseurl }}" alt="generated substrates" />one of the site's cats, <i>Antar</i> (<span lang="ar" dir="rtl">كالثوم</span>), named for the legendary knight <a href="https://en.wikipedia.org/wiki/Antarah_ibn_Shaddad">Antar Ibn-Shabbad</a>
+	<img src="{{ '/img/permaculture/antar.jpg' | prepend: site.baseurl }}" alt="generated substrates" />one of the site's cats, <i>Antar</i> (<span lang="ar" dir="rtl">عنترة</span>), named for the legendary knight <a href="https://en.wikipedia.org/wiki/Antarah_ibn_Shaddad">Antar Ibn-Shabbad</a>
 </span>
 
 The simulation clocked on a single cycle that updates every second. Every time it loops a few things happen.
