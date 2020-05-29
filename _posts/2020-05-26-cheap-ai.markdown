@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "chatbots and cheap AI"
-date:  2020-06-01
+date:  2020-05-29
 description: on weird bots and dumb tricks (dumb bots and weird tricks)
 tags: ai, chatbots
 status: published
