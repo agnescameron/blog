@@ -4,11 +4,11 @@ title:  "chatbots and cheap AI"
 date:  2020-06-01
 description: on weird bots and dumb tricks (dumb bots and weird tricks)
 tags: ai, chatbots
-status: draft
+status: published
 image: /img/bots/screens.png
 ---
 
-A few weeks ago, [Foreign Objects](https://www.foreignobjects.net/) released a project called [Bot or Not](https://botor.no/), a project that we'd worked on for the 2019-20 [Mozilla Creative Media Awards](https://blog.mozilla.org/blog/2019/09/17/examining-ais-effect-on-media-and-truth/). You play a game of 'truth' against a random opponent: at the end, you have to guess whether or not they're human, and they make the same guess about you. 
+A few weeks ago, [Foreign Objects](https://www.foreignobjects.net/) released Bot or Not](https://botor.no/), a project that we'd worked on for the 2019-20 [Mozilla Creative Media Awards](https://blog.mozilla.org/blog/2019/09/17/examining-ais-effect-on-media-and-truth/). You play a game of 'truth' against a random opponent: at the end, you have to guess whether or not they're human, and they make the same guess about you. 
 
 <span class="fullwidth">
 	<img src="{{ '/img/bots/screens.png' | prepend: site.baseurl }}" alt="two views of the app" />
@@ -27,13 +27,11 @@ The main idea of the game is to trouble both your idea of what you might be talk
 
 It's probably important to distinguish between the kind of bot that we made, which has a lot in common with customer service bots and spam bots, from bots that use generative machine learning as their primary tactic of engagement. These latter bots can exist outside of the constraints of a particular context, and instead respond to patterns of speech, with no preprogrammed responses. It's the latter kind of bot that are actually subject to Turing tests because, importantly, the conversation needs to take place without an assumed shared context.
 
-The funniest ones from the former category are probably the Tinder spam bots. There's been a vogue recently for the line 'if you're human, say potato' being used against spammers, who can't cope with a statement that's so wildly out of context and get thrown off.
-
 <span class="marginnote">
 	<img src="{{ '/img/bots/faith.jpg' | prepend: site.baseurl }}" alt="a passive-agressive conversation with a chatbot by ryan kuo" />faith holds a conversation
 </span>
 
-Artist Ryan Kuo's piece Faith is a great example of this medium being subverted. Working with technologists Angeline Meizler and Tommy Martinez, he used IBM's chatbot platform to make a defensive and resistant chatbot, inspired by conversations he'd had and seen online. One thing he talks about in the work is the 'misuse' of this software that's designed for businesses to automate customer service, and all the assumptions that come baked into these platforms. This has definitely been something we've been thinking about here too.
+Artist Ryan Kuo's piece Faith is a great example of the first type being subverted. Working with technologists Angeline Meizler and Tommy Martinez, he used IBM's Watson Assistant to make a defensive and resistant chatbot, inspired by conversations he'd had and seen online. One thing he talks about in the work is the 'misuse' of this software that's designed for businesses to automate customer service, and all the assumptions that come baked into these platforms. This has definitely been something we've been thinking about here too.
 
 <span class="marginnote">
 	<img src="{{ '/img/bots/eliza.jpg' | prepend: site.baseurl }}" alt="a conversation with a bot pretending to be a psychotherapist" />a session with ELIZA
@@ -47,13 +45,18 @@ ELIZA, Joseph Weizenbaum's rogerian psychotherapist bot, is an enduring and fant
 
 One thing we knew from the outset was that context would be really important in making this bot as human as possible. After all, it was pretty obvious that we weren't about to pass the turing test in a few months, but there were some things we could do to create a compelling experience that felt like being online.
 
-The bot was built from a combination of some client-side NLP, and google's Dialogflow service, which is traditionally used to make customer service bots. One of the reasons that both we (and customer service engineers) chose this method is that you get very fine-grained control over what it can and can't say. We wanted to be able to steer the conversation, and also the project was originally for younger people: wanted to be really sure that the bot couldn't accidentally say something hurtful or offensive.
+The bot was built from a combination of some client-side NLP, and google's Dialogflow service, which is traditionally used to make customer service bots. One of the reasons that we chose this method is that you get very fine-grained control over what it can and can't say. We wanted to be able to steer the conversation, and also we wanted to be really sure that the bot couldn't accidentally say something hurtful or offensive, as this project is at least partly geared toward an educational context.
 
 Of course, the downside of this is that all the responses had to be written by us. In some senses this was good, as we got to write a lot of jokes, but it definitely meant that we ran into diminishing returns pretty fast every time we wanted to expand the range of things the bot could say.
 
 **dialogflow**
 
 Dialogflow is a Google platform that allows people to build chatbots. It exposes an API, where you send in text, and you get out a response from the bot. In the dialogflow 'world' there are 2 main ideas:
+
+<span class="marginnote">
+<img src="{{ '/img/bots/cli.gif' | prepend: site.baseurl }}" alt="an interaction with the bot" /><br>
+<span class="mainnote">an early test of the bot, showing the triggered intent along with the response each time. The 'truth' challenge is generated client-side without ever getting sent to Dialogflow, so no intent is printed in that instance</span><br>
+</span>
 
 - Intents -- Intents are composed of 'training phrases', which define possible things that a user can say to the bot, and responses to a particular detected 'intent'. For example, the intent `Location - General` gets triggered if you ask the bot: 'where are you?'. If what the user says doesn't match any intents, then something called the 'Default Fallback Intent' gets triggered (or, if in a specific context, the Contextual Fallback Intent). When this happens, the bot will respond with something neutral, like 'haha' (or, in our case, something else will happen... see below)
 - Contexts -- This is the 'context' in which the conversation is currently operating, that helps the bot to better respond to what you say to it. You can set up intents so that they can only be triggered while in a certain context, and/or so that they set a context on the output. For example, if you were talking to the bot in the context `crushes`, and asked 'what about you?', the bot would tell you of its soft spot for Andrew Yang. If you were instead in the context of talking about `cooking`, the bot would respond to say it had eggs on toast for breakfast, and does indeed like to cook. It's also possible to set contexts through the API, without triggering a new intent, which is what happens every time the bot makes a truth challenge.
@@ -62,13 +65,13 @@ For a fuller explanation of how all this works, [Google's documentation](https:/
 
 **the NLP layer(s)**
 
-It became clear pretty early on that the one thing dialogflow was not going to be able to handle was parsing structured queries that involved anything more complex than its '[entity detection](https://cloud.google.com/dialogflow/docs/entities-overview)' framework. A classic example of this is the 'would you rather' question: the response to that has to include some part of the initial sentnce.
+It became clear pretty early on that the one thing dialogflow was not going to be able to handle was parsing structured queries that involved anything more complex than its '[entity detection](https://cloud.google.com/dialogflow/docs/entities-overview)' framework. A classic example of this is the 'would you rather' question, where you have to incorporate/paraphrase the initial question in the response.
 
 <span class="marginnote">
 	<img src="{{ '/img/bots/would-you-rather.png' | prepend: site.baseurl }}" alt="an interaction with the bot" />the bot handles a would you rather challenge
 </span>
 
-To handle cases like this, we have an array of objects, each of which contains a set of approximate things the user could say, along with a set of possible responses, and contexts they can set. In order to detect better, the user's query gets changed to lower-case before matching, and instead of using a direct match, the Levenshtein Distance is used.
+To handle cases like this, we have an array of objects, each of which contains a family of approximate things the user could say, along with a set of possible responses, and contexts they can set. In order to detect better, the user's query gets changed to lower-case before matching, and instead of using a direct match, the Levenshtein Distance is used.
 
 In this case, the `$` symbol is switched out for a random half of the word (split by the 'or' in the middle), then replaced by one of the options the user has posed (changing second to first person, and vice versa). In this case, the set context is the same each time, as we never know what we're saying in response.
 
@@ -90,7 +93,7 @@ In this case, the `$` symbol is switched out for a random half of the word (spli
 }
 ```
 
-This idea was then developed for use in detecting other sentence structures and issues. For example, if the user seemed upset, or if they said that the conversation was slow or awkward, the bot would change the topic of conversation by asking a question.
+This idea was then developed for use in detecting other sentence structures and issues. For example, if the player seemed upset, or if they said that the conversation was slow or awkward, the bot would change the topic of conversation by asking a question. Similarly, if the player uses the bot's name, it looks for a bunch of different sentence structures (including 'my dad is called X') to respond.
 
 ### conversation design
 
@@ -100,7 +103,7 @@ This idea was then developed for use in detecting other sentence structures and 
 	<img src="{{ '/img/bots/diagram-simple.png' | prepend: site.baseurl }}" alt="an interaction with the bot" />a diagram of the 'habit' conversation and context flow
 </span>
 
-One of the most interesting parts of this project was trying to create a realistic conversation flow without needing to define 'follow-up' responses in infinite depth. It became clear early on that the 'brute-force' approach (just predict everything everyone could say) would not work, and instead the conversation maps needed to look less like infinitely branching trees, and more like a lanscape of hills that the conversation could climb and disembark gracefully.
+One of the most interesting parts of this project was trying to create a realistic conversation flow without needing to define 'follow-up' responses to each new context in infinite depth. It became clear early on that the 'brute-force' approach (just predict everything everyone could say) would never work even with a clear context, and instead the conversation maps needed to look less like infinitely branching trees, and more like a lanscape of hills that the conversation could climb and disembark gracefully.
 
 On the right is a simple 'context transfer' diagram for the 'habit' prompt. When challenging you, the bot will ask 'What is your worst habit'. Depending on the detected intent of your response, the bot will set a context that your habit was a 'bad habit' (if it matched a list of gross or annoying habits), a 'not so bad habit' (if it was cute or harmless), or will fall back on the default response for that context, where it'll start talking about how much time it spends online
 
@@ -149,7 +152,7 @@ If there's no existing context, then the bot will try to change the topic of con
 
 **testing**
 
-What was really hard about testing the bot was that, despite best efforts, it was really hard not to bake your own assumptions about how people text into the interface. In our case, with mostly myself and Gary writing and testing the bot's responses, it did really well when we were talking to it (it does, indeed text like us), quite well with Kalli, Sam and other close friends, and it fucking sucked when someone we had nothing in common with tried it.
+What was really hard about testing the bot was that, despite best efforts, it was really hard not to bake your own assumptions about how people text into the interface. In our case, with mostly myself and Gary writing and testing the bot's responses, it did really well when we were talking to it (it does, indeed text like us), quite well with Kalli, Sam and other close friends, and sometimes sucked when someone we had nothing in common with tried it. Testing and reading people's logs was really invaluable in shaping the platform a bit more, though the robust error-handling also did a lot.
 
 In the future, (see below) I think that the best way to make the bot more robust would be to really up the NLP layer, to better deal with a range of different contexts and people. I think also giving the bot some kind of underlying 'state' that it could use to modulate it's responses 
 
