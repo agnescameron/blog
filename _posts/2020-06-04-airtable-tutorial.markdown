@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "netlify / airtable tutorial"
+author: agnes cameron
 date:  2020-06-01
 description: how to make a free, secure CMS with airtable and netlify
 tags: CMS, tutorial

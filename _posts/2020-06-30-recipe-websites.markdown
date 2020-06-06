@@ -1,6 +1,7 @@
 ---
 layout: post
 title: let 1000 recipe websites bloom
+author: agnes cameron
 date:  2020-06-30
 description: on traversing the landscape of food-space
 tags: automata, permaculture, sakiya

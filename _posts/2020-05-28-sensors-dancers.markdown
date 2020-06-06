@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  sensors and dancers
+author: agnes cameron
 date:  2020-06-28 10:23:58
 description: on sensors, movement, dildonics and (briefly) oskar schlemmer
 tags: sensing, sound, movement, bauhaus

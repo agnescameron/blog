@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  permaculture network
+author: agnes cameron
 date:  2020-05-27
 description: on goats and real/virtual ecologies
 tags: automata, permaculture, sakiya
