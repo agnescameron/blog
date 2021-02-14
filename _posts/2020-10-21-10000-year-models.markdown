@@ -5,7 +5,7 @@ title: the first 10,000 years
 date:  2020-05-29
 description: who models the modellers?
 tags: simulation, markets
-status: published
+status: draft
 image: /img/fud/traces.png
 ---
 
