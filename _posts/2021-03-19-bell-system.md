@@ -2,7 +2,7 @@
 layout: post
 author: agnes cameron
 title: an introduction to the bell system
-date:  2021-03-19
+date:  2021-03-21
 description: on embroidery and tech nostalgia
 tags: bell labs, media archaeology
 status: published
