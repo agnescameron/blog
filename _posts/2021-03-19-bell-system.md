@@ -11,7 +11,7 @@ image: /img/bots/screens.png
 
 Last week we ([Foreign Objects](https://www.foreignobjects.net/)) presented the project [An Introduction To The Bell System](https://1127.foreignobjects.net/)<label for="bell-system" class="margin-toggle sidenote-number"></label><input id="bell-system" class="margin-toggle"/><span class="sidenote">taken from the title of an internal employee handbook that we came across in the Bell Labs archives</span> as part of a talk hosted by Rhizome and the New Museum. The piece consists of a series of 5 embroidered jumpsuits, each themed around a particular strand of Bell Labs' Computing Sciences Research Center work/folk history. As Gary and I are currently in the UK, and Kalli and Sam in Canada, with the work itself in New York, it was something of a weirdly disembodied experience (though perhaps a snapshot of life as a successful international artist on the cheap, ha ha). 
 
-I'm hopeful that this isn't a hard end to the project -- more of an inflection point that allows us to explore other areas -- though I'm also proud of the work that we did, along with collaborators Eliza Collin (who handled the non-embroidery parts of garment production and fabrication, including natural-dyeing all of the fabric), and Genie Kausto (who did all of the styling, photography and filming onsite at Bell).
+I'm hopeful that this isn't a hard end to the project -- more of an inflection point that allows us to explore other areas -- though I'm also proud of the work that we did, along with collaborators [Eliza Collin](http://elizacollin.com/) (who handled the non-embroidery parts of garment production and fabrication, including natural-dyeing all of the fabric), and [Genie Kausto](https://www.instagram.com/genie.kausto/) (who did all of the styling, photography and filming onsite at Bell).
 
 <span class="fullwidth">
 	<img src="{{ '/img/bell/gremlin_desk.jpg' | prepend: site.baseurl }}" alt="two views of the app" />
@@ -193,11 +193,9 @@ This was probably the trickiest of the designs, as it required both a regular gr
 	round 2
 </span>
 
-first attempt:
-At first, I tried doing this straight in PE Design 6: producing a fairly good-quality grid after a huge amount of dragging different points around in the software. The result embroidered OK, but the toolpath was pretty strange (see right). The way the toolpath was laid out in the software also meant it was impossible to shift the status graph around without distorting the whole grid. After 10 minutes fruitlessly dragging points around I realised there must be a better way.
+**first attempt:** At first, I tried doing this straight in PE Design 6: producing a fairly good-quality grid after a huge amount of dragging different points around in the software. The result embroidered OK, but the toolpath was pretty strange (see right). The way the toolpath was laid out in the software also meant it was impossible to shift the status graph around without distorting the whole grid. After 10 minutes fruitlessly dragging points around I realised there must be a better way.
 
-second attempt:
-I made the grids in PEMbroider, then dropped them into the .PES file editor of PE design 6, which I hadn't realised until recently allows you to layer multiple designs on top of each other. it doesn't have the nice 'merging' features of PEMbroider, and you can't edit the patterns directly without editing the originals, but nonetheless, it allowed a hybrid grid/fill system to be made. I drew out the fills, then processed them with PE Design 6, making a remarkably complicated meta-file that only *just* fit the largest hoop. But~ it came out well in the end.
+**second attempt:** I made the grids in PEMbroider, then dropped them into the .PES file editor of PE design 6, which I hadn't realised until recently allows you to layer multiple designs on top of each other. it doesn't have the nice 'merging' features of PEMbroider, and you can't edit the patterns directly without editing the originals, but nonetheless, it allowed a hybrid grid/fill system to be made. I drew out the fills, then processed them with PE Design 6, making a remarkably complicated meta-file that only *just* fit the largest hoop. But~ it came out well in the end.
 
 <span class="fullwidth">
 	<img src="{{ '/img/bell/plan9_status.JPG' | prepend: site.baseurl }}" alt="status graphs on grids embroidered on a jumpsuit" />
