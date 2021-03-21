@@ -2,6 +2,22 @@
 
 /*my own, gross, css (should be a separate file really, ha ha)*/
 
+/*main page*/
+
+#imageContainer {
+    position: fixed;
+    height: 40vh;
+    top: 150px;
+    left: 50vw;
+}
+
+#imageContainer img {
+    /*height: inherit;*/
+    width: 40vw;
+}
+
+/*header*/
+
 .header {
     height: 50px;
     position: fixed;

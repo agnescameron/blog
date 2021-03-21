@@ -6,7 +6,7 @@ date:  2021-03-19
 description: on embroidery and tech nostalgia
 tags: bell labs, media archaeology
 status: published
-image: /img/bots/screens.png
+image: /img/bell/gremlin_desk.jpg
 ---
 
 Last week we ([Foreign Objects](https://www.foreignobjects.net/)) presented the project [An Introduction To The Bell System](https://1127.foreignobjects.net/)<label for="bell-system" class="margin-toggle sidenote-number"></label><input id="bell-system" class="margin-toggle"/><span class="sidenote">taken from the title of an internal employee handbook that we came across in the Bell Labs archives</span> as part of a talk hosted by Rhizome and the New Museum. The piece consists of a series of 5 embroidered jumpsuits, each themed around a particular strand of Bell Labs' Computing Sciences Research Center work/folk history. As Gary and I are currently in the UK, and Kalli and Sam in Canada, with the work itself in New York, it was something of a weirdly disembodied experience (though perhaps a snapshot of life as a successful international artist on the cheap, ha ha). 
