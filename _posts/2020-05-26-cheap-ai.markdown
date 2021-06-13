@@ -9,7 +9,7 @@ status: published
 image: /img/bots/screens.png
 ---
 
-A few weeks ago, [Foreign Objects](https://www.foreignobjects.net/) released Bot or Not](https://botor.no/), a project that we'd worked on for the 2019-20 [Mozilla Creative Media Awards](https://blog.mozilla.org/blog/2019/09/17/examining-ais-effect-on-media-and-truth/). You play a game of 'truth' against a random opponent: at the end, you have to guess whether or not they're human, and they make the same guess about you. 
+A few weeks ago, [Foreign Objects](https://www.foreignobjects.net/) released [Bot or Not](https://botor.no/), a project that we'd worked on for the 2019-20 [Mozilla Creative Media Awards](https://blog.mozilla.org/blog/2019/09/17/examining-ais-effect-on-media-and-truth/). You play a game of 'truth' against a random opponent: at the end, you have to guess whether or not they're human, and they make the same guess about you. 
 
 <span class="fullwidth">
 	<img src="{{ '/img/bots/screens.png' | prepend: site.baseurl }}" alt="two views of the app" />

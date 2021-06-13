@@ -54,4 +54,4 @@ to do script with command \\
 "node /Users/agnes/etc/bot/index.js"'"""
 ```
 
-Mostly, this exercise has given me some impetus to rewrite the helper command I keep in my bash profile to do some more elaborate tasks (currently just limited to navigating to directories and opening new windows with a specific profile).s
+Mostly, this exercise has given me some impetus to rewrite the helper command I keep in my bash profile to do some more elaborate tasks (currently just limited to navigating to directories and opening new windows with a specific profile).
