@@ -382,7 +382,7 @@ pre.fullwidth > code {
 
 span.newthought {
     font-variant: small-caps;
-    font-size: 1.2em; 
+    font-size: 1.2rem; 
 }
 
 input.margin-toggle {
@@ -412,7 +412,22 @@ label.margin-toggle:not(.sidenote-number) {
     height: 100%; 
 }
 
-@media (max-width: 760px) {
+@media (max-width: 700px) {
+
+.header {
+    height: 50px;
+    position: fixed;
+    background-color: white;
+    top: 0px;
+    width: 100%;
+}
+
+
+    body {
+        background-color: pink !important;
+        color: pink;
+    }
+
     article {
         width: 84%;
         padding-left: 8%;
@@ -490,5 +505,8 @@ label.margin-toggle:not(.sidenote-number) {
     
     img {
         width: 100%;
-    } 
+    }
+
 }
+
+
