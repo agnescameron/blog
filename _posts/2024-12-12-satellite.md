@@ -35,7 +35,7 @@ However, satellite imaging sensors also typically capture infrared light, which 
 This is a guide to using multispectral satellite imaging to track mining operations, using contrasts between different parts of the light spectrum to highlight differences in mineral and chemical composition. While mining is chosen as the example, this kind of analysis can be used more broadly to understand geopolitical events through the lens of accelerating ecological change. For an example of how multispectral information can be used in this way, this [2021 investigation](https://www.bellingcat.com/resources/case-studies/2021/08/02/is-climate-change-heating-up-central-asias-border-disputes-clues-from-satellite-imagery/) into the role of water stress into conflict on the Kyrgyzstan/Tajikistan border uses thermal, vegetation and moisture indices to contextualise the analysis of a nominally unrelated dispute about security cameras. 
 
 <span class="marginnote">
-	<img src="{{ '/img/bellingcat/veg-health.png' | prepend: site.baseurl }}" alt="vegetation health"/>vegetation health during the Summer 2023 drought in the UK, taken from the FAO's <a href="https://www.fao.org/giews/earthobservation/country/index.jsp?lang=en&code=GBR">Earth Observation tool</a>. This imagery is collected using out-of-visible range information collected by the Metop satellite.
+	<img src="{{ '/img/bellingcat/veg-health.png' | prepend: site.baseurl }}" alt="vegetation health"/>vegetation health during the Summer 2023 drought in the UK, taken from the FAO's <a href="https://www.fao.org/giews/earthobservation/country/index.jsp?lang=en&code=GBR">Earth Observation tool</a>. The metrics used to create these images are calculated by combining visible and infrared light collected by the AVHRR sensor on board the Metop satellite.
 </span>
 
 This guide will introduce multispectral imaging techniques using the physics of light, demonstrating how to use widely-available geological information as the basis for investigations. After an overview of how both light and satellite sensors work, I will discuss the application of techniques such as band comparisons and band ratios to expand our field of vision. At the end of this guide, there is also a set of links to tools that can be used to expand this analysis.
@@ -48,35 +48,25 @@ A note on language: the terms 'satellite imaging' and 'remote sensing' are often
 
 Before understanding how a satellite image is constructed, it's worth looking at how we perceive light. All of the light that we see is part of a much larger range of radiation known as the 'electromagnetic spectrum'. Electromagnetic radiation travels in waves, and includes forms of radiation like X-rays and infrared radiation, that humans cannot see but can be detected through other means. The electromagnetic spectrum is ordered by the 'wavelength' of the radiation, a property that changes the way that light interacts with different materials. 'Visible light' – e.g. light that can be seen with the human eye – ranges between the infrared light (which has a longer wavelength) and ultraviolet light (which has a shorter wavelength) on the electromagnetic spectrum.
 
-<figure>
-	<img src="{{ '/img/bellingcat/spectrum.png' | prepend: site.baseurl }}" alt="main"/>
-</figure>
-
-
-All substances either reflect or absorb different wavelengths of electromagnetic radiation in some combination, and by examining how radiation interacts with a particular material, it's possible to make some inferences about what that material is. Satellite imaging datasets will often describe what they measure as 'surface reflectance'. This literally means, measuring the different wavelengths of light that are reflected, rather than absorbed, by whatever is on that part of the Earth's surface.
-
 <span class="marginnote">
 	<img src="{{ '/img/bellingcat/plants-green.png' | prepend: site.baseurl }}" alt="vegetation health"/>
 	the chlorophyll in healthy plant leaves absorbs blue and red light -- when this breaks down in the Autumn, leaves stop absorbing red light, causing green and red to be reflected and changing the leaves to orange
 </span>
 
-Consider plants – when we see an area of deep green on a 'true colour' satellite image, we typically associate that with vegetation. This green colour is due to the presence of chlorophyll in plant leaves, which reflects green light waves.
+<figure>
+	<img src="{{ '/img/bellingcat/spectrum.png' | prepend: site.baseurl }}" alt="main"/>
+</figure>
 
-Interestingly, there is a second kind of light that healthy plants reflect that isn't visible to the human eye. This other wavelength falls in the shortwave infrared range, where the light waves are too long for the human eye to see, but can be picked up by some animals, and, crucially, by satellite imaging sensors. This extra information [becomes important](https://www.nature.com/articles/s43017-022-00298-5) for differentiating between healthy and unhealthy vegetation, and making inferences about the type of crops in a region. (notably, it's also invaluable for differentiating between astroturf and real grass...)
+All substances either reflect or absorb different wavelengths of electromagnetic radiation in some combination, and by examining how radiation interacts with a particular material, it's possible to make some inferences about what that material is. Satellite imaging datasets will often describe what they measure as 'surface reflectance'. This literally means, measuring the different wavelengths of light that are reflected, rather than absorbed, by whatever is on that part of the Earth's surface.
 
 <span class="marginnote">
 	<img src="{{ '/img/bellingcat/astroturf.jpg' | prepend: site.baseurl }}"/>
 	an image from Ollie Ballinger's <a href="https://bellingcat.github.io/RS4OSINT/A2_Remote_Sensing.html">Remote Sensing for OSINT</a> guide, showing the contrast between astroturf (inside the stadium) and real grass (highlighted in red in the second image), only visible using infrared information.
 </span>
 
-Just as a digital camera image captures red, green, and blue data in different layers, a satellite image contains layers called 'bands', each with information from a specific segment of the electromagnetic spectrum. Different satellite datasets will vary in the number, width (e.g. what range of wavelengths a band contains) and distribution of bands, with commonly-used datasets such as Landsat, Sentinel and MODIS having around 8-9. Each band by itself can be viewed as a single-colour image that gives information about one part of the spectrum. Combined together, they can be used to reconstruct colour images.
+Consider plants – when we see an area of deep green on a 'true colour' satellite image, we typically associate that with vegetation. This green colour is due to the presence of chlorophyll in plant leaves, which reflects green light waves.
 
-
-<figure>
-	<img src="{{ '/img/bellingcat/bands.jpg' | prepend: site.baseurl }}" alt="main"/>
-	<span class="mainnote">the spectral placement of different Landsat bands, mapped against the atmospheric absorption spectrum (image credit: <a href="https://commons.wikimedia.org/wiki/File:The_spectral_band_placement_for_each_sensor_of_Landsat.jpg">Wikimedia</a>)</span>
-</figure>
-
+Interestingly, there is a second kind of light that healthy plants reflect that isn't visible to the human eye. This other wavelength falls in the shortwave infrared range, where the light waves are too long for the human eye to see, but can be picked up by some animals, and, crucially, by satellite imaging sensors. This extra information [becomes important](https://www.nature.com/articles/s43017-022-00298-5) for differentiating between healthy and unhealthy vegetation, and making inferences about the type of crops in a region. Notably, it's also invaluable for differentiating between astroturf and real grass...
 
 ## ways of seeing
 
@@ -85,31 +75,65 @@ Just as a digital camera image captures red, green, and blue data in different l
 	a true-colour timelapse of spreading Bauxite mines in St Ann Parish, Jamaica (Google Earth Engine / Landsat 7)
 </span>
 
-
 There's a nice line from the information theorist Gregory Bateson, which describes information as 'the difference which makes a difference' – in other words, much of our ability to sense and act in the world rests on noticing discontinuities – in time, form, colour, and through other sensory means. Often, visual forms of investigative work involve highlighting a difference so as to make it more visible – picture a 'before and after' image, or a clip that shows the shrinking of a lake or the expansion of a construction site – to draw inferences about higher-order events.
 
 One key form of difference available to human perception is the ratio of the red (R), green (G) and blue (B) light in an image. Most peoples' eyes distinguish between these colours very effectively<label for="colourblindness" class="margin-toggle sidenote-number"></label><span class="sidenote" id="colourblindness">many people suffer from colourblindness, which can make the differentiation between different parts of the light spectrum more difficult</span>, and give us a form of vision that is distinct from other animals – a dog, for example, has only two different kinds of photoreceptors in its eyes, resulting in a form of vision that consists of yellows, blues and greys.
 
-## using band comparisons
+### note: satellite imaging dataset structure
 
-How do we apply this to satellite imagery? Consider the following example, a satellite image of lakes around the American town of Sandersville, Georgia. This first image is a typical 'true colour' satellite image, like you'd see on Google Earth. This image has been composed by taking the R, G and B bands separately, and displaying the R band with the red pixels of your computer screen, the G band with the green pixels, and the B band with the blue pixels.
+Just as a digital camera image captures red, green, and blue data in different layers, a satellite image contains layers called 'bands', each with information from a specific segment of the electromagnetic spectrum. Different satellite datasets will vary in the number, width (e.g. what range of wavelengths a band contains) and distribution of bands, with commonly-used datasets such as Landsat, Sentinel and MODIS having around 8-9.
+
+<span class="marginnote">
+	<img src="{{ '/img/bellingcat/oli-bands.png' | prepend: site.baseurl }}" alt="vegetation health"/>
+	<img src="{{ '/img/bellingcat/tirs-bands.png' | prepend: site.baseurl }}" alt="vegetation health"/>
+	table of bands captured by Landsat 8, by the OLI and TIRS sensors respectively
+</span>
+
+
+<figure>
+	<img src="{{ '/img/bellingcat/bands.jpg' | prepend: site.baseurl }}" alt="main"/>
+	<span class="mainnote">the spectral placement of different Landsat bands, mapped against the atmospheric absorption spectrum (image credit: <a href="https://commons.wikimedia.org/wiki/File:The_spectral_band_placement_for_each_sensor_of_Landsat.jpg">Wikimedia</a>)</span>
+</figure>
+
+For each image of the earth's surface captured, each 'band' in the dataset will consist of a black-and-white image representing the intensity of surface reflectance in that band. The brighter the pixels, the more light is being reflected in that part of the spectrum. Combined together, these bands can be used to reconstruct colour images.
+
+In different satellite image datasets, the numbering of the bands will correspond to different parts of the spectrum. In this guide we will use Landsat 8 band numbering, however 
+
+<span class="marginnote">
+	<img src="{{ '/img/bellingcat/oli.jpg' | prepend: site.baseurl }}" alt="vegetation health"/>
+	diagram of the OLI sensor on board Landsat 8
+</span>
+
+One important thing to note is that *sensors* (the things that actually capture the data) normally have different names to the satellites themselves, and one satellite may have many sensors on board. Thus, you might often see Landsat 7's dataset referred to as 'ETM+' (Enhanced Thermal Mapping), or Landsat 8 (which contains two different sensors) as OLI (Optical Light Instrument) and TIRS (Thermal Infrared Sensor).
+
+## seeing more with band comparisons
+
+Multispectral satellite imaging techniques use differences between light reflected in different bands to reveal information about a scene. Consider the following example, a satellite image of lakes around the American town of Sandersville, Georgia, surrounded by a series of chalky white areas.
+
+This first image is a typical 'true colour' satellite image, like you'd see on Google Earth. This image has been composed by taking the R, G and B bands separately, and displaying the R band with the red pixels of your computer screen, the G band with the green pixels, and the B band with the blue pixels.
 
 <figure>
 	<img src="{{ '/img/bellingcat/sandersville-rgb.png' | prepend: site.baseurl }}" alt="main"/>
 </figure>
 
-Within earth observation, different 'band comparisons' are typically used for different tasks. Shown below is the classic 'vegetation' band comparison, which uses a shortwave infrared band in the 'R' slot, with 'R' information in the G slot and G in the B slot (Landsat 8 bands 5, 4 and 3 respectively).<label for="bands" class="margin-toggle sidenote-number"></label><span class="marginnote" id="bands">In different satellite image datasets, the numbering of the bands will correspond to different colours. In this guide we will use Landsat 7 band numbering, however a comparison table between Landsats 7 and 8, Sentinel, ASTER and MODIS is available at the end of this guide.</span> In areas with large amounts of vegetation, this will produce a very bright red image. The darker red indicates areas where the vegetation is healthy – lighter red indicates sparser vegetation.
+To get a different perspective on the scene, we can use a ['band combination'](https://gisgeography.com/landsat-8-bands-combinations/) -- a false colour image that makes use of out-of-visible range information to highlight different features of the scene.
+
+Shown below is the classic 'vegetation' band combination, which uses the Near Infrared (NIR) 5 band in the 'R' slot, with 'R' information in the G slot and G in the B slot (Landsat 8 bands 5, 4 and 3 respectively)<label for="colourblindness" class="margin-toggle sidenote-number"></label><span class="sidenote" id="colourblindness">why this order? Within Earth Observation (EO) there are conventions as to what bands go into which 'slot' of the image, normally in descending order --  though you would still be able to see differences by swapping them around.</span>. In areas with large amounts of vegetation, this will produce a very bright red image. The darker red indicates areas where the vegetation is healthy – lighter red indicates sparser vegetation.
 
 <figure>
 	<img src="{{ '/img/bellingcat/sandersville-nir.png' | prepend: site.baseurl }}" alt="main"/>
 </figure>
+<span class="marginnote">
+	<img src="{{ '/img/bellingcat/nile-valley.png' | prepend: site.baseurl }}" alt="vegetation health"/>
+	for comparison to the NIR image of Sandersville, shown here is the same band combination (5, 4, 3) applied to the Nile Valley in Egypt
+</span>
 
-Note that the same chalky-white patches have appeared in all of the images so far – this 'white' area means that whatever substance is there is reflecting all incident radiation of the wavelengths we've been looking at, including this first shortwave infrared band.
+Note that the same chalky-white patches have appeared in all of the images so far, meaning that whatever substance is there is reflecting all incident radiation of the wavelengths we've been looking at, including this Near Infrared band.
 
-Take a look at this next image. A number of the previously white areas now appear highlighted in shades of purplish-pink, indicating lower values in the 'G' band, but still high values in the R and B bands. The 'G' band in this instance is Landsat band 5. Note that this band comparison (5, 6, 2) also highlights lots of differences between different areas of crops – it's typically used in the analysis of agricultural information.
+However, in this next image, we can see that some of the patches are no longer white. This image was generated using the 7, 5, 4 band comparison, which is typically used to track wildfires (you can also see that the fields are much more distinct than before). Now, around half of the white areas from the previous image are now cyan in colour, implying that they are absorbing light in the 7 band, which stands in for red in this image.
 
 <figure>
-	<img src="{{ '/img/bellingcat/sandersville-vegetation.png' | prepend: site.baseurl }}" alt="main"/>
+	<img src="{{ '/img/bellingcat/sandersville-754.png' | prepend: site.baseurl }}" alt="main"/>
 </figure>
 
 <span class="marginnote">
@@ -117,14 +141,20 @@ Take a look at this next image. A number of the previously white areas now appea
 	map of the 'fall line' of clay deposits in Georgia (image: Georgia Mining Association)
 </span>
 
-This is where we can start to make some inferences. We now know that material we're looking for will reflect wavelengths around band 4, but absorb wavelengths around band 5 – this indicates a change in the absorption spectra. If we take a look at what wavelengths of light these bands represent, 5 is near infrared (0.77-0.9μm), while band 6 is in the shortwave infrared range (1.55-1.75μm).
 
-<span class="marginnote">
-	<img src="{{ '/img/bellingcat/sky-spectrum.png' | prepend: site.baseurl }}"/>
-	graph showing the spectral signature of blue sky
-</span>
+This is where we can start to make some inferences. We now know that material we're looking for will reflect wavelengths around band 5, but absorb wavelengths around band 7 – this indicates a change in the absorption spectra. If we take a look at what wavelengths of light these bands represent, 5 is Near Infrared (0.85-0.88μm), while band 7 is in the Shortwave Infrared range (2.11-2.29μm).
 
 What we are looking at are lakes with high deposits of [kaolinite](https://en.wikipedia.org/wiki/Kaolinite) – a clay mineral – in Sandersville, Georgia. Kaolin clay is mined in large open-cast mines for use in the paper, ceramics and coatings industry. It's part of a geological feature that passes diagonally through Georgia, known as the 'fall line', that separates two tectonic plates. Hundreds of tons of kaolin clay are extracted each year from this area of Georgia, from large open pit mines.
+
+<!-- <span class="marginnote">
+	<img src="{{ '/img/bellingcat/kaolinite.jpg' | prepend: site.baseurl }}" alt="vegetation health"/>
+	a sample of kaolinite clay from Twiggs County, Georgia (<a href="https://en.wikipedia.org/wiki/Kaolinite#/media/File:Kaolinite_from_Twiggs_County_in_Georgia_in_USA.jpg">Wikipedia</a>)
+</span>
+ -->
+<span class="marginnote">
+	<img src="{{ '/img/bellingcat/sky-spectrum.png' | prepend: site.baseurl }}"/>
+	graph showing the spectral signature of blue sky, showing high reflectance in the blue part of the light spectrum (source: Wikipedia)
+</span>
 
 In order to match up what we're seeing in the satellite image to the material we are interested in, we want to look at what's called the 'spectral signature' of kaolinite. A spectral signature is a graph that shows, for a particular material, what proportion of different wavelengths of light you would expect to be reflected. For example, the 'spectral signature' of 'blue sky' reflects a lot of light around the 'blue light' range, and doesn't reflect too much light outside of that, resulting in a blue colour.
 
@@ -134,13 +164,7 @@ Below is the reflectance spectrum of kaolinite in red, with the relevant Landsat
 	<img src="{{ '/img/bellingcat/kaolinite-reflectance.png' | prepend: site.baseurl }}" alt="main"/>
 </figure>
 
-We can see from the reflectance spectrum of kaolinite that it's less reflective of light immediately around 1.5μm, and that it drops off sharply after a wavelength of 2μm. In fact, the area you'd expect to drop off due to kaolinite is a bit outside of the 5 band – the fact that it does in the image we're looking at might be due to impurities, or because the kaolinite is suspended in water, which changes its reflectance (we can see from images of Sandersville in this blog post that many of the pits have been filled with water).
-
-We can see this change is even more pronounced in the '7, 5, 4' band combination. This is often used to monitor wildfires (where burned areas will appear grey), but we can also see that only the blue part of the image on some of the previously-white lakes is highlighted, meaning that very little light in bands 7 and 5 is reflected. As band 7, the second shortwave infrared band is between 2.08-2.35μm, this corresponds with what we might expect.
-
-<figure>
-	<img src="{{ '/img/bellingcat/sandersville-754.png' | prepend: site.baseurl }}" alt="main"/>
-</figure>
+We can see from the reflectance spectrum of kaolinite that the reflectance dips around 1.4μm, and that it drops off sharply after a wavelength of 2μm. Thus -- much less light is reflected in the band 7 shortwave infrared, reflected in the cyan areas of our image.
 
 ## band ratios
 
@@ -180,13 +204,21 @@ Thus, using the band ration 2/10, we can now see the chat piles show up on the i
 
 ## using band ratios to track bauxite mining
 
-Bauxite is a sedimentary rock with a high concentration of aluminium minerals, and is used as the basis for over 99% of aluminium production worldwide. Surging demand for aluminium in recent years has driven massive expansions of bauxite mining operations, at the expense of the areas from which it is extracted, and to the profit of a small number of giant mining conglomerates, the most prominent including Alcan, Alcoa and Chinalco. Increasingly, Bauxite mining operations are extending into indigenous land, and are associated with deforestation, changes to hydrology and displacement of communities.
-
 <span class="marginnote">
 	<img src="{{ '/img/bellingcat/bauxite-rock.JPG' | prepend: site.baseurl }}" alt="google maps screenshot"/>a piece of red bauxite rock
 </span>
 
-Bauxite is extracted using large open-pit mines, and dust from the industry often spreads to cover surrounding areas, and is widely considered to be an ecological disaster. Among other factors, a key side product of bauxite extraction is ‘red mud’, a highly alkaline and polluting slurry that contains large amounts of iron oxide, as well as aluminium oxide components, and is usually kept in large, toxic ‘tailings lakes’ close to processing facilities.
+Bauxite is a sedimentary rock with a high concentration of aluminium minerals, and is used as the basis for over 99% of aluminium production worldwide. Surging demand for aluminium in recent years has driven massive expansions of bauxite mining operations, at the expense of the areas from which it is extracted, and to the profit of a small number of giant mining conglomerates, the most prominent including Alcan, Alcoa and Chinalco. Increasingly, Bauxite mining operations are extending into indigenous land, and are associated with deforestation, changes to hydrology and displacement of communities.
+
+<!-- <span class="marginnote">
+	<img src="{{ '/img/bellingcat/world-aluminium.png' | prepend: site.baseurl }}" alt="google maps screenshot"/>worldwide aluminium production 1900-present. From 1957-1971, Jamaica was the world's largest producer of bauxite, mined largely by Canadian and American mining companies
+</span>
+ -->
+Bauxite is extracted using large open-pit mines, and dust from the industry often spreads to cover surrounding areas, and is widely considered to be an ecological disaster. Among other factors, a key side product of bauxite extraction is 'red mud', a highly alkaline and polluting slurry that contains large amounts of iron oxide, as well as aluminium oxide components, and is usually kept in large, toxic 'tailings lakes' close to processing facilities.
+
+<!-- <span class="marginnote">
+	<img src="{{ '/img/bellingcat/red-mud-germany.jpg' | prepend: site.baseurl }}" alt="google maps screenshot"/>red mud in a tailings lake in Germany
+</span> -->
 
 <span class="marginnote">
 	<img src="{{ '/img/bellingcat/bauxite-mineralogy.png' | prepend: site.baseurl }}" alt="google maps screenshot"/>bauxite mineralogy diagram, showing balance between ferrous and clay minerals
@@ -248,19 +280,32 @@ For a much fuller report on bauxite mining's past, future and causes in the regi
 
 With this model, it’s possible to see changes in other mining areas. Consider the following timelapse image, showing changes to the Bukit Goh bauxite mine in the Malaysian district of Kuantan between 2012-2023. Bukit Goh lies at the epicentre of the [2015-16 Kuantan Bauxite mining disaster](https://www.bbc.co.uk/news/world-asia-35340528), which saw deregulated mining operations tear through farmland, and spread polluting bauxite dust over roads, severely polluting waterways. Changes in legislation to neighbouring Indonesia’s bauxite exports in 2014 caused demand in the region to skyrocket, with Malaysian bauxite production increasing 100-fold from 200,000 to 20 million tonnes between 2013-15. Again, the areas mined or affected by dust pollution are highlighted in a bright yellow, with healthy vegetation appearing as a darker blue.
 
-<span class="marginnote">
+<!-- <span class="marginnote">
 	<img src="{{ '/img/bellingcat/kuantan-lorries.png' | prepend: site.baseurl }}" alt="google maps screenshot"/>abandoned lorries in the Kuantan mine (image via BBC)
 </span>
+ -->
 
-In the immediate aftermath of the 2015-16 disaster, the Malaysian government prevented the issuance of new mining licences and ordered the remediation of damaged land. We can see that between 2017-19 some of the mined land has been covered with topsoil. However, more recently – possibly following the [2019 reissuing of mining licences](https://www.reuters.com/article/malaysia-bauxite/malaysia-to-issue-bauxite-mining-licences-by-january-after-ban-lifted-idUSL3N27K0QP/) to bauxite companies by the Malaysian government – we can potentially see new areas once more expanding toward the bottom left of the image. 
+<figure class="fullwidth">
+	<div class="subfig">
+		<img src="{{ '/img/bellingcat/jamaica-rgb.png' | prepend: site.baseurl }}" alt="april"/>
+		<span class="mainnote">true colour satellite image of central Jamaica</span>
+	</div>
+	<div class="subfig">
+		<img src="{{ '/img/bellingcat/jamaica-bauxite.png' | prepend: site.baseurl }}" alt="august"/>
+		<span class="mainnote">false colour image highlighting bauxite mines</span>
+	</div>
+</figure>
+
+In the immediate aftermath of the 2015-16 disaster, the Malaysian government prevented the issuance of new mining licences and ordered the remediation of damaged land. We can see that between 2017-19 some of the mined land has been covered with topsoil. However, more recently – possibly following the [2019 reissuing of mining licences](https://www.reuters.com/article/malaysia-bauxite/malaysia-to-issue-bauxite-mining-licences-by-january-after-ban-lifted-idUSL3N27K0QP/) to bauxite companies by the Malaysian government – we can potentially see new areas once more expanding toward the bottom left of the timelapse.
 
 ### bauxite mining in West Kalimantan
 
+We can use the same technique to look at Bauxite mines in Indonesia, another country that has seen massive mining-based land grabs over the past 2 decades. One particularly affected area surrounds the Kapuas river in West Kalimantan.
+
 <span class="marginnote">
 	<img src="{{ '/img/bellingcat/tayan-small.gif' | prepend: site.baseurl }}" alt="main"/>
+	timelapse of pausing then spreading bauxite mine expansion around the Kapuas river, near the village of Tayan Hilir, Indonesia
 </span>
-
-We can use the same technique to look at Bauxite mines in Indonesia, another country that has seen massive mining-based land grabs over the past 2 decades. One particularly affected area surrounds the Kapuas river in West Kalimantan. 
 
 A [2015 study](https://www.iss.nl/sites/corporate/files/CMCP_81_Pye_et_al.pdf) of land grabs in the region directly linked the drying of a lake to bauxite mining expansion in 2013-14, and named bauxite extraction as part of a linked set of extractive industries encroaching on indigenous peoples’ livelihoods. While bauxite extraction slowed after Indonesia’s 2014 policy to end exports of the mineral, local people have been offered little other than financial compensation (‘dust money’) for the damage done, with mines still expanding in some areas, and little to no remediation with topsoil.
 
