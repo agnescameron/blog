@@ -5,23 +5,17 @@ author: agnes cameron
 date:  2025-01-01
 description: writeup of research project for Bellingcat
 tags: satellite, mining
-status: published
+status: draft
 image: '/img/bellingcat/tayan-full-2.png'
 ---
 
 *This is a writeup of research into using satellite imagery to track mining operations, funded as part of Bellingcat's [2024 Technical Writing Fellowship](https://www.bellingcat.com/become-a-2024-bellingcat-technical-writing-fellow/), and is a more in-depth version of a [short guide]() published on their online platform. The accompanying Band Ratio Explorer tool is available [here](https://ee-agnesfcameron.projects.earthengine.app/view/band-ratio-explorer)*
-
-*[Melissa Zhu](https://x.com/melzxy) and [Galen Reich](https://galen.reich.me.uk/) of Bellingcat both contributed extensive help, advice and editorial support to the writing this guide. Thanks also to [Kat MacDonald](https://otherkat.com/), [Murad Khan](https://www.muradkhan.co.uk/), Sergio Calderón Harker and Didem Incegoz, who helped proofread early drafts.*
-
-*If this is of any use to you, or you have further questions free to [email me](mailto:agnesfcameron@protonmail.com). I also compiled the references used in my research [here](https://www.are.na/agnes-cameron/proj-satellite-imaging-indices) (for general satellite imaging techniques), and [here](https://www.are.na/agnes-cameron/proj-satellite-mining) for mining-specific resources.*
 
 <figure class="fullwidth">
 	<img src="{{ '/img/bellingcat/tayan-full-2.png' | prepend: site.baseurl }}" alt="main"/>
 	<span class="mainnote">a false colour satellite image of bauxite mines (yellow) near the Kapuas river, West Kalimantan (Google Earth Engine / Landsat 8)</span>
 </figure>
 
-
-## multispectral satellite imagery
 
 Satellite images we encounter on platforms like Google Earth are typically rendered in 'true colour', which emulates how a scene might look when viewed with the naked eye. This rendering mode is natural, and is useful for producing images where the contents are easily recognisable. 
 
@@ -285,14 +279,14 @@ With this model, it’s possible to see changes in other mining areas. Consider 
 </span>
  -->
 
-<figure class="fullwidth">
+<figure>
 	<div class="subfig">
-		<img src="{{ '/img/bellingcat/jamaica-rgb.png' | prepend: site.baseurl }}" alt="april"/>
-		<span class="mainnote">true colour satellite image of central Jamaica</span>
+		<img src="{{ '/img/bellingcat/kuantan-2015.png' | prepend: site.baseurl }}" alt="april"/>
+		<span class="mainnote">image of a bauxite mine near Kuantan 2015</span>
 	</div>
 	<div class="subfig">
-		<img src="{{ '/img/bellingcat/jamaica-bauxite.png' | prepend: site.baseurl }}" alt="august"/>
-		<span class="mainnote">false colour image highlighting bauxite mines</span>
+		<img src="{{ '/img/bellingcat/kuantan-2023.png' | prepend: site.baseurl }}" alt="august"/>
+		<span class="mainnote">the same mine covered with topsoil in 2023</span>
 	</div>
 </figure>
 
@@ -330,29 +324,68 @@ What band ratios give us in each of these cases is a precise tool to highlight c
 
 ### making use of other indices
 
-While geological band ratios can be very useful by themselves for clearly delineating different mineral areas, they may also be used in conjunction with other satellite imaging indices to make causal analyses about the effects of mining on the landscape. Two popular indices are the NDVI and NDWI – the Normalised Difference Vegetation Index, and Normalised Difference Water Index, and give information about vegetation health and moisture levels respectively. If we wanted, for example, to look at the effectiveness of the remediation in the above examples from Kuantan and Tayan, one line of enquiry could be to calculate the NDVI of affected areas during that time.
+<!-- <span class="marginnote">
+	<img src="{{ '/img/bellingcat/ndvi-june.png' | prepend: site.baseurl }}" alt="main"/>
+	<img src="{{ '/img/bellingcat/ndvi-oct.png' | prepend: site.baseurl }}" alt="main"/>
+	NDVI of the UK, June vs October 2023
+</span>
+ -->
 
-These indices can link mining to the broader political ecology of the region, understanding disparate impacts on hydrology, soil health, and agricultural viability. It’s worth noting that these should be used thoughtfully – for example, both these indices change with the seasons, and the NDWI is also strongly affected by cloud cover (this makes analyses of areas affected by Bauxite mining particularly challenging, as most fall within the warm, wet and cloudy tropics). 
+ <span class="marginnote">
+	<img src="{{ '/img/bellingcat/landtrendr.png' | prepend: site.baseurl }}" alt="main"/>
+	diagram from Han et. al's paper outlining the application of the Landtrendr algorithm and NDVI
+</span>
+
+While geological band ratios can be very useful by themselves for clearly delineating different mineral areas, they may also be used in conjunction with other satellite imaging indices to make causal analyses about the effects of mining on the landscape. Two popular indices are the NDVI and NDWI – the [Normalised Difference Vegetation Index](https://en.wikipedia.org/wiki/Normalized_difference_vegetation_index), and [Normalised Difference Water Index](https://en.wikipedia.org/wiki/Normalized_difference_water_index), and give information about vegetation health and moisture levels respectively.
+
+These indices can link mining to the broader political ecology of the region, understanding disparate impacts on hydrology, soil health, and agricultural viability. It’s worth noting that these should be used thoughtfully – for example, both these indices change with the seasons, and the NDWI is also strongly affected by cloud cover (this makes analyses of areas affected by Bauxite mining particularly challenging, as most fall within the warm, wet and cloudy tropics).
+
+[This 2021 paper](https://www.tandfonline.com/doi/epdf/10.1080/15481603.2021.1996319?needAccess=true) by Han et. al, gives a well-explained example of using the NDVI within a robust time-series system to track vegetation degredation and recovery in reclaimed mining areas (their focus is on areas around Beijing, but the technique applies more generally).
 
 ### limitations
 
-One of the key limitations to much satellite imaging work is the presence of clouds, and these can be particularly misleading when using false-colour images, as they’re far less easy to recognise. A common ‘sanity check’ is to switch back to the true colour image, in order to check that what you’re seeing is something that’s actually on the ground.
+One of the key limitations to much satellite imaging work is the presence of clouds, and these can be particularly misleading when using false-colour images, as they’re far less easy to recognise. A common 'sanity check' is to switch back to the true colour image, in order to check that what you’re seeing is something that’s actually on the ground.
 
-(I got really excited about these glowing artefacts in the Amazonas basin, until I realised they were clouds...)
+<!-- <figure>
+	<div class="subfig">
+		<img src="{{ '/img/bellingcat/amazonas-clouds.png' | prepend: site.baseurl }}" alt="april"/>
+		<span class="mainnote">artefacts in a river in the Amazonas basin...</span>
+	</div>
+	<div class="subfig">
+		<img src="{{ '/img/bellingcat/amazonas-clouds-rgb.png' | prepend: site.baseurl }}" alt="august"/>
+		<span class="mainnote">...turn out just to be clouds when examined in rgb</span>
+	</div>
+</figure> -->
+
+
+<span class="marginnote">
+	<img src="{{ '/img/bellingcat/clouds-aligned.png' | prepend: site.baseurl }}" alt="main"/>
+	artefacts in a river in the Amazonas basin turn out just to be clouds when examined in rgb...
+</span>
 
 Another limitation on geological indices is vegetation – in areas where rock is not exposed, often it’s easier to make inferences about rock types using vegetation variation as a clue, rather than using the reflectance spectra of the rocks themselves, as if they are covered then this will not be visible to satellites.
 
 Lastly, when using satellite imagery it can be tempting to draw premature conclusions about the meaning of different zones and artefacts. For example, one might note that an area appears to have very high concentrations of Ferrous Sulphate, as the wavebands associated with FeSO3 are bright in images tuned to detect those wavelengths. However, there are a range of other minerals that might also follow a similar reflectance pattern. One way around this is to match up with what is on the ground, or use it as an indicator in conjunction with other evidence. Rarely, if ever, is satellite imaging alone enough to confirm or deny the presence of a substance, but it can be a very useful tool to provide clues, and to demonstrate changes over time.
 
+<span class="marginnote">
+	<img src="{{ '/img/bellingcat/idb-bands-2.png' | prepend: site.baseurl }}" alt="main"/>
+	indexDB's list of sensors by bands, showing where different satellite imaging sensors collect light
+</span>
+
 ## finding and using indices
 
-There are a number of tools available that can help determine useful band combinations and ratios, and indices for a given application. 
+There are a number of tools available that can help determine useful band combinations and ratios, and indices for a given application.
 
 The website IndexDB is a fantastic resource for finding possible indices and band ratios. IndexDB maps between satellite imaging datasets (referred to there as 'sensors', denoting the instrument used to capture the data), indices (including band ratios), and 'applications', which refer to families of indices that may be used in a particular analysis.
 
+<span class="marginnote">
+	<img src="{{ '/img/bellingcat/idb-metals.png' | prepend: site.baseurl }}" alt="main"/>
+	search results for the application 'Heavy Metals Contamination', showing possible indices and sensors with relevant bands
+</span>
+
 For example -- if I am interested in looking at heavy metals pollution in topsoil, I can select this application, and see a list of relevant indices. Choosing one of these (e.g. FeO3) will bring up a list of sensors with bands suitable for calculating the relevant ratios. Selecting one of the listed sensors will then bring up the calculation with the relevant bands for that dataset, along with references to literature.
 
-One thing you might notice about IndexDB is the high number of sensors that are listed. The list is quite exhaustive, and doesn't always give a clear idea of other factors relevant to use in open-source investigations, such as timeframe, spatial and temporal resolution, cost, availability and ease of use. One way to cross-reference this information is by using Google's Earth Engine Data Catalog, which lists datasets available freely on the platform, with accompanying metadata that can serve as indicators for the usefulness of a dataset to a given application. Sometimes, however, this metadata can be a little misleading. NASA's ASTER dataset, for example, will often appear to be a great option, because of the large number of bands it contains, with a good spatial resolution and a timeframe. However, most of the most useful bands for geological work (namely short wave infrared) were only active from 2000-2008, meaning they cannot be used in contemporary analyses. If in doubt, Landsats 7 and 8, Sentinel and MODIS are all good and freely-available starting datasets.
+One thing you might notice about IndexDB is the high number of sensors that are listed. The list is quite exhaustive, and doesn't always give a clear idea of other factors relevant to use in open-source investigations, such as timeframe, spatial and temporal resolution, cost, availability and ease of use. One way to cross-reference this information is by using Google's [Earth Engine Data Catalog](https://developers.google.com/earth-engine/datasets/), which lists datasets available freely on the platform, with accompanying metadata that can serve as indicators for the usefulness of a dataset to a given application. Sometimes, however, this metadata can be a little misleading. NASA's [ASTER](https://developers.google.com/earth-engine/datasets/catalog/ASTER_AST_L1T_003) dataset, for example, will often appear to be a great option, because of the large number of bands it contains, with a good spatial resolution and a timeframe. However, most of the most useful bands for geological work (namely short wave infrared) were only active from 2000-2008, meaning they cannot be used in contemporary analyses. If in doubt, [Landsats 7, 8 and 9](https://developers.google.com/earth-engine/datasets/catalog/landsat), [Sentinel 1 and 2](https://developers.google.com/earth-engine/datasets/catalog/sentinel), and [MODIS](https://developers.google.com/earth-engine/datasets/catalog/modis) are all good and freely-available starting datasets.
 
 Outside of the indices listed in IndexDB, information about if and how a substance can be differentiated via band ratios can be discovered by searching Google Scholar for academic papers. It's also possible to approximate your own band ratios, using tools such as the USGS spectral characteristics viewer, as mentioned earlier in the article.
 
@@ -360,17 +393,40 @@ Often the choice of precise bands can be a little more subtle than simply examin
 
 ## extending mineral investigations
 
+<span class="marginnote">
+	<img src="{{ '/img/bellingcat/aster-anti-atlas.jpg' | prepend: site.baseurl }}" alt="main"/>
+	a detailed false-colour image of rock types in Morocco's Anti-Atlas mountains, created using infrared light collected by the ASTER satellite (NASA)
+</span>
+
 For more complex lithological and geological information when contemporary data is not as useful, NASA's ASTER satellite collected detailed data in the short wave infrared bands from 2000-2009 (after which the sensors unfortunately malfunctioned). Many of the examples in the open-source [Awesome mining band ratio](https://github.com/rodreras/awesome-mining-band-ratio) list relate to ASTER-based analysis.
 
 Much of the most precise contemporary research and investigative work makes use of band ratios and indices within the wider toolset of machine learning, and other mathematical techniques such as [principal component analysis](https://en.wikipedia.org/wiki/Principal_component_analysis). Platforms such as Sentinel's [EO-Learn](https://eo-learn.readthedocs.io/en/latest/index.html) contain a number of open-source machine learning models and examples, and Google Earth Engine also provides a rich toolset for training machine learning algorithms.
 
-A great starting tutorial to take these techniques further is Ollie Ballinger's [Remote Sensing for OSINT](https://bellingcat.github.io/RS4OSINT/), which includes a detailed case study on using machine learning techniques to identify oil refineries in Northwestern Syria. For an example of the same linear regression and machine learning techniques applied specifically to the context of mining pollution, this 2021 article uses eight spectral indices in total to infer the presence of heavy metals in topsoils in the Daxigo mining area in the Shaanxi province of China.
+A great starting tutorial to take these techniques further is Ollie Ballinger's [Remote Sensing for OSINT](https://bellingcat.github.io/RS4OSINT/), which includes a detailed case study on using machine learning techniques to identify oil refineries in Northwestern Syria. For an example of the same linear regression and machine learning techniques applied specifically to the context of mining pollution, [this 2021 article](https://www.nature.com/articles/s41598-021-91103-8#Tab2) uses eight spectral indices in total to infer the presence of heavy metals in topsoils in the Daxigo mining area in the Shaanxi province of China.
+
+<span class="marginnote">
+	<img src="{{ '/img/bellingcat/daxigou-heavy-metals.jpg' | prepend: site.baseurl }}" alt="main"/>
+	detailed spatial distributions of heavy metals pollution in Daxigou mining area, calculated from Landsat 8 imagery using machine learning techniques <a href="https://www.nature.com/articles/s41598-021-91103-8">source</a>.
+</span>
 
 ## conclusion
 
-Multispectral satellite imaging provides a broad and varied range of information about the Earth's surface, including much that is invisible to the naked eye. By amplifying subtle differences in how materials reflect different kinds of light, we can make quite sophisticated inferences about a landscape's ecological and geological properties. Like all forms of remote sensing, satellite imaging is one of a suite of tools that allows us to see alongside what might be happening on the ground, rather than a replacement for it. Academic fields such as ecology and geology have long-standing techniques for using this information in a replicable and verifiable manner, and increasingly, use tools such as machine learning to enhance these indices’ effectiveness. 
+Multispectral satellite imaging provides a broad and varied range of information about the Earth's surface, including much that is invisible to the naked eye. By amplifying subtle differences in how materials reflect different kinds of light, we can make quite sophisticated inferences about a landscape's ecological and geological properties. Like all forms of remote sensing, satellite imaging is one of a suite of tools that allows us to see alongside what might be happening on the ground, rather than a replacement for it. Academic fields such as ecology and geology have long-standing techniques for using this information in a replicable and verifiable manner, and increasingly, use tools such as machine learning to enhance these indices’ effectiveness.
+
+<span class="marginnote">
+	<img src="{{ '/img/bellingcat/danube.jpg' | prepend: site.baseurl }}" alt="vegetation health"/>
+	silicate minerals band ratio comparison in the Danube delta
+</span>
+
 
 Ultimately, what these images provide us with is a set of lenses that may be applied to see a landscape differently. This extended form of vision is useful both in the direct identification of surface changes, such as the expansion of mines, the spread of pollutants, and changes to vegetation, but can also play a subtler role in articulating the mutual influence between political and ecological struggles.
 
-All of this code was written using the Google Earth Engine platform, and is available on github here. GEE requires you to write code, but is a good option in terms of being free, well-documented and cloud-based (e.g. doesn't require you to download large datasets). An open-source desktop application is qGIS, which does not require code (though does mean you need to download the data locally). No-code platforms such as Copernicus Browser also have presets for common indices like the NDVI and NDWI, and allow you to swap out different band combinations.
+All of this code was written using the [Google Earth Engine](https://earthengine.google.com/) platform, and is available on Github here. GEE requires you to write code, but is a good option in terms of being free, well-documented and cloud-based (e.g. doesn't require you to download large datasets). An open-source desktop application is [qGIS](https://www.qgis.org/), which does not require code (though does mean you need to download the data locally). No-code platforms such as [Copernicus Browser](https://browser.dataspace.copernicus.eu/) also have presets for common indices like the NDVI and NDWI, and allow you to swap out different band combinations.
+
+--------------
+
+
+*The work that went into this guide was supported by open-source investigative bureau Bellingcat. [Melissa Zhu](https://x.com/melzxy) and [Galen Reich](https://galen.reich.me.uk/) of Bellingcat both contributed extensive help, advice and editorial support to the writing this guide. Thanks also to [Kat MacDonald](https://otherkat.com/), [Murad Khan](https://www.muradkhan.co.uk/), Sergio Calderón Harker and Didem Incegoz, who gave feedback on early drafts, to ecologist [Austin Wade Smith](http://www.austinwadesmith.com/) who discussed this project with me very early on, and geologists [James Aber](http://www.geospectra.net/) (incredible website) and [Roger Wheate](https://www.unbc.ca/roger-wheate), who were both kind enough to answer some very basic questions.*
+
+*If this guide is of any use to you, or you have further questions free to [email me](mailto:agnesfcameron@protonmail.com). I also compiled the references used in my research [here](https://www.are.na/agnes-cameron/proj-satellite-imaging-indices) (for general satellite imaging techniques), and [here](https://www.are.na/agnes-cameron/proj-satellite-mining) for mining-specific resources.*
 
