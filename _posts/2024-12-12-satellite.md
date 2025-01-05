@@ -398,7 +398,7 @@ Often the choice of precise bands can be a little more subtle than simply examin
 	a detailed false-colour image of rock types in Morocco's Anti-Atlas mountains, created using infrared light collected by the ASTER satellite (NASA)
 </span>
 
-For more complex lithological and geological information when contemporary data is not as useful, NASA's ASTER satellite collected detailed data in the short wave infrared bands from 2000-2009 (after which the sensors unfortunately malfunctioned). Many of the examples in the open-source [Awesome mining band ratio](https://github.com/rodreras/awesome-mining-band-ratio) list relate to ASTER-based analysis.
+For more complex lithological and geological information when contemporary data is not as necessary, NASA's ASTER satellite collected detailed data in the short wave infrared bands from 2000-2009 (after which the sensors unfortunately malfunctioned). Many of the examples in the open-source [Awesome mining band ratio](https://github.com/rodreras/awesome-mining-band-ratio) list relate to ASTER-based analysis.
 
 Much of the most precise contemporary research and investigative work makes use of band ratios and indices within the wider toolset of machine learning, and other mathematical techniques such as [principal component analysis](https://en.wikipedia.org/wiki/Principal_component_analysis). Platforms such as Sentinel's [EO-Learn](https://eo-learn.readthedocs.io/en/latest/index.html) contain a number of open-source machine learning models and examples, and Google Earth Engine also provides a rich toolset for training machine learning algorithms.
 
