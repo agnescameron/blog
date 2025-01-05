@@ -507,15 +507,13 @@ label.margin-toggle:not(.sidenote-number) {
     }
 
     .marginnote {
-        float: right;
-        clear: right;
-        margin-right: 30px;
-        width: 45%;
-        padding-left: 5%;
+        width: 95%;
+        padding-left: 10%;
         margin-top: 0;
+        margin-right: 5%;
         margin-bottom: 20px;
-    font-size: 1rem;
-    line-height: 1.2;
+        font-size: 1rem;
+        line-height: 1.2;
         vertical-align: baseline;
         position: relative;
     }
