@@ -5,7 +5,7 @@ author: agnes cameron
 date:  2025-01-01
 description: writeup of research project for Bellingcat
 tags: satellite, mining
-status: draft
+status: published
 image: '/img/bellingcat/tayan-full-2.png'
 ---
 
