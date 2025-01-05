@@ -40,16 +40,16 @@ A note on language: the terms 'satellite imaging' and 'remote sensing' are often
 
 ## the electromagnetic spectrum
 
+<figure>
+	<img src="{{ '/img/bellingcat/spectrum.png' | prepend: site.baseurl }}" alt="main"/>
+</figure>
+
 Before understanding how a satellite image is constructed, it's worth looking at how we perceive light. All of the light that we see is part of a much larger range of radiation known as the 'electromagnetic spectrum'. Electromagnetic radiation travels in waves, and includes forms of radiation like X-rays and infrared radiation, that humans cannot see but can be detected through other means. The electromagnetic spectrum is ordered by the 'wavelength' of the radiation, a property that changes the way that light interacts with different materials. 'Visible light' – e.g. light that can be seen with the human eye – ranges between the infrared light (which has a longer wavelength) and ultraviolet light (which has a shorter wavelength) on the electromagnetic spectrum.
 
 <span class="marginnote">
 	<img src="{{ '/img/bellingcat/plants-green.png' | prepend: site.baseurl }}" alt="vegetation health"/>
 	the chlorophyll in healthy plant leaves absorbs blue and red light -- when this breaks down in the Autumn, leaves stop absorbing red light, causing green and red to be reflected and changing the leaves to orange
 </span>
-
-<figure>
-	<img src="{{ '/img/bellingcat/spectrum.png' | prepend: site.baseurl }}" alt="main"/>
-</figure>
 
 All substances either reflect or absorb different wavelengths of electromagnetic radiation in some combination, and by examining how radiation interacts with a particular material, it's possible to make some inferences about what that material is. Satellite imaging datasets will often describe what they measure as 'surface reflectance'. This literally means, measuring the different wavelengths of light that are reflected, rather than absorbed, by whatever is on that part of the Earth's surface.
 
