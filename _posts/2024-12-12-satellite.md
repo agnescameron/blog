@@ -45,7 +45,7 @@ Before understanding how a satellite image is constructed, it's worth looking at
 
 <span class="marginnote">
 	<img src="{{ '/img/bellingcat/plants-green.png' | prepend: site.baseurl }}" alt="vegetation health"/>
-	the chlorophyll in healthy plant leaves absorbs blue and red light -- when this breaks down in the Autumn, leaves stop absorbing red light, causing green and red to be reflected and changing the leaves to orange
+	the chlorophyll in healthy plant leaves absorbs blue and red light -- when this breaks down in the Autumn, leaves stop absorbing red light, causing green and red to be reflected and changing the leaves to orange. (Wikipedia)
 </span>
 
 All substances either reflect or absorb different wavelengths of electromagnetic radiation in some combination, and by examining how radiation interacts with a particular material, it's possible to make some inferences about what that material is. Satellite imaging datasets will often describe what they measure as 'surface reflectance'. This literally means, measuring the different wavelengths of light that are reflected, rather than absorbed, by whatever is on that part of the Earth's surface.
@@ -56,7 +56,7 @@ Interestingly, there is a second kind of light that healthy plants reflect that 
 
 <span class="marginnote">
 	<img src="{{ '/img/bellingcat/st-ann-timelapse.gif' | prepend: site.baseurl }}"/>
-	a true-colour timelapse of spreading Bauxite mines in St Ann Parish, Jamaica (Google Earth Engine / Landsat 7)
+	a true-colour timelapse of spreading Bauxite mines in St Ann Parish, Jamaica (Google Earth Engine/Landsat 7)
 </span>
 
 ## ways of seeing
@@ -72,7 +72,7 @@ Just as a digital camera image captures red, green, and blue data in different l
 <span class="marginnote">
 	<img src="{{ '/img/bellingcat/oli-bands.png' | prepend: site.baseurl }}" alt="vegetation health"/>
 	<img src="{{ '/img/bellingcat/tirs-bands.png' | prepend: site.baseurl }}" alt="vegetation health"/>
-	table of bands captured by Landsat 8, by the OLI and TIRS sensors respectively
+	table of bands captured by Landsat 8, by the OLI and TIRS sensors respectively (Wikipedia)
 </span>
 
 
@@ -87,7 +87,7 @@ In different satellite image datasets, the numbering of the bands will correspon
 
 <span class="marginnote">
 	<img src="{{ '/img/bellingcat/oli.jpg' | prepend: site.baseurl }}" alt="vegetation health"/>
-	diagram of the OLI sensor on board Landsat 8
+	diagram of the OLI sensor on board Landsat 8 (Wikipedia)
 </span>
 
 One important thing to note is that *sensors* (the things that actually capture the data) normally have different names to the satellites themselves, and one satellite may have many sensors on board. Thus, you might often see Landsat 7's dataset referred to as 'ETM+' (Enhanced Thermal Mapping), or Landsat 8 (which contains two different sensors) as OLI (Optical Light Instrument) and TIRS (Thermal Infrared Sensor).
@@ -99,7 +99,7 @@ Multispectral satellite imaging techniques use differences between light reflect
 This first image is a typical 'true colour' satellite image, like you'd see on Google Earth. This image has been composed by taking the R, G and B bands separately, and displaying the R band with the red pixels of your computer screen, the G band with the green pixels, and the B band with the blue pixels.
 
 <figure>
-	<img src="{{ '/img/bellingcat/sandersville-rgb.png' | prepend: site.baseurl }}" alt="main"/>
+	<img src="{{ '/img/bellingcat/sandersville-rgb.png' | prepend: site.baseurl }}" alt="main"/> (Google Earth Engine/Landsat 8)
 </figure>
 
 To get a different perspective on the scene, we can use a ['band combination'](https://gisgeography.com/landsat-8-bands-combinations/) -- a false colour image that makes use of out-of-visible range information to highlight different features of the scene.
@@ -111,7 +111,7 @@ Shown below is the classic 'vegetation' band combination, which uses the Near In
 </figure>
 <span class="marginnote">
 	<img src="{{ '/img/bellingcat/nile-valley.png' | prepend: site.baseurl }}" alt="vegetation health"/>
-	for comparison to the NIR image of Sandersville, shown here is the same band combination (5, 4, 3) applied to the Nile Valley in Egypt
+	for comparison to the NIR image of Sandersville, shown here is the same band combination (5, 4, 3) applied to the Nile Valley in Egypt (Google Earth Engine/Landsat 8)
 </span>
 
 Note that the same chalky-white patches have appeared in all of the images so far, meaning that whatever substance is there is reflecting all incident radiation of the wavelengths we've been looking at, including this Near Infrared band.
@@ -119,7 +119,7 @@ Note that the same chalky-white patches have appeared in all of the images so fa
 However, in this next image, we can see that some of the patches are no longer white. This image was generated using the 7, 6, 4 band comparison, also sometimes called the Shortwave Infrared comparison, which is also used to monitor soil health. Now, around half of the white areas from the previous image are now cyan in colour, and there's a much greater degree of contrast and variation in those areas.
 
 <figure>
-	<img src="{{ '/img/bellingcat/sandersville-764-aligned.png' | prepend: site.baseurl }}" alt="main"/>
+	<img src="{{ '/img/bellingcat/sandersville-764-aligned.png' | prepend: site.baseurl }}" alt="main"/> (Google Earth Engine/Landsat 8)
 </figure>
 
 <!-- <span class="marginnote">
@@ -136,7 +136,7 @@ What we are looking at are lakes with high deposits of [kaolinite](https://en.wi
  -->
 <span class="marginnote">
 	<img src="{{ '/img/bellingcat/sky-spectrum.png' | prepend: site.baseurl }}"/>
-	graph showing the spectral signature of blue sky, showing high reflectance in the blue part of the light spectrum (source: Wikipedia)
+	graph showing the spectral signature of blue sky, showing high reflectance in the blue part of the light spectrum (Wikipedia)
 </span>
 
 In order to match up what we're seeing in the satellite image to the material we are interested in, we want to look at what's called the 'spectral signature' of kaolinite. A spectral signature is a graph that shows, for a particular material, what proportion of different wavelengths of light you would expect to be reflected. For example, the 'spectral signature' of 'blue sky' reflects a lot of light around the 'blue light' wavelength. Light that isn't blue gets absorbed, meaning that when you are looking at the sky, it's blue light that's reaching your eyes -- resulting in a blue colour.
@@ -144,7 +144,7 @@ In order to match up what we're seeing in the satellite image to the material we
 Below is the reflectance spectrum of kaolinite, marked in red, with the relevant Landsat bands marked in navy blue overlaid. This image was made using the [USGS Spectral Characteristics Viewer](https://landsat.usgs.gov/spectral-characteristics-viewer), which allows you to map the reflectance spectrum of a mineral of interest against the bands of different satellite sensors, including the Landsat and Sentinel satellites.
 
 <figure>
-	<img src="{{ '/img/bellingcat/kaolinite-reflectance.png' | prepend: site.baseurl }}" alt="main"/>
+	<img src="{{ '/img/bellingcat/kaolinite-reflectance.png' | prepend: site.baseurl }}" alt="main"/> (Google Earth Engine/Landsat 8)
 </figure>
 
 The reason that kaolinite looks white in the first two images is that bands 2, 3, 4, 5 and 6 all have a high reflectance -- so when those bands are slotted into the R,G,B channels of an image, they are all uniformly bright. However, we can see that the reflectance dips around 1.4μm, and that it drops off sharply after a wavelength of 2μm. Thus -- much less light is reflected in band 7 (SWIR 2), meaning that in the 7, 6, 4 image, the G and B channels are bright but R is dark, hence cyan.
@@ -156,13 +156,13 @@ As you might have noticed, the band comparisons are a bit of a blunt tool. We ha
 As shown in the previous example, kaolin clay reflects the most amount of light in the NIR band (5) and absorbs most light in the SWIR-2 band (7). We can look for the contrast between those bands using the 5/7 band ratio. By applying this band ratio, anything reflecting a lot of light in band 5 but absorbing a lot of light in band 7 will appear very bright, with materials with other absorption spectra appearing dark. This band ratio highlights a number of bright white spots in the images.
 
 <figure>
-	<img src="{{ '/img/bellingcat/sandersville-kaolinite.png' | prepend: site.baseurl }}" alt="main"/>
+	<img src="{{ '/img/bellingcat/sandersville-kaolinite.png' | prepend: site.baseurl }}" alt="main"/> (Google Earth Engine/Landsat 8)
 </figure>
 
 It would be tempting to conclude that this is where the kaolin mines are, but checking the location of active mining pits against the location of the white spots, it seems that, while they contain some bright patches, the mining areas are not the brightest parts of the image.
 
 <figure>
-	<img src="{{ '/img/bellingcat/sandersville-mines.png' | prepend: site.baseurl }}" alt="main"/>
+	<img src="{{ '/img/bellingcat/sandersville-mines.png' | prepend: site.baseurl }}" alt="main"/> (Google Earth Engine/Landsat 8)
 </figure>
 
 If we zoom into one of these mining areas -- marked as Southeastern Performance Minerals LLC on Google Maps -- we can see in detail what is being highlighted. Note that the two Google Earth Engine images appear pixellated at this scale, but the Google Maps image on the right is much higher resolution. That's because Google Maps uses a bunch of different data, included private data, composited together to make its maps.
@@ -186,13 +186,14 @@ By zooming in further to Google maps, the features most highlighted appear to be
 
 <span class="marginnote">
 	<img src="{{ '/img/bellingcat/deepstep-lake.png' | prepend: site.baseurl }}"/>
-	two of the areas most brightly highlighted by the 5/7 band ratio
+	two of the areas most brightly highlighted by the 5/7 band ratio (Google Earth Engine/Landsat 8)
 </span>
 
 If we look at the spectral signature for *turbid* water with clay minerals with the USGS tool (blue line), we can see that even though these areas have much lower reflectance overall, because they reflects almost no light in the SWIR-2 band, they will have a much more extreme 5/7 ratio than that of kaolinite. We can also see this in the 764 image -- they appear a much deeper shade of cyan, rather than bright! They just *really* don't contain a red component.
 
 <figure>
 	<img src="{{ '/img/bellingcat/kaolin-turbid.png' | prepend: site.baseurl }}" alt="main"/>
+	(Google Earth)
 </figure>
 
 
@@ -200,13 +201,13 @@ So - how do we see kaolin? When looking up the correct band ratio for kaolin (an
 
 <span class="marginnote">
 	<img src="{{ '/img/bellingcat/wrens-mine.png' | prepend: site.baseurl }}"/>
-	kaolin highlights with the 6/7 ratio show up much more on the kaolin mine in Wrens, Georgia, which is a couple of mines Northwest of the Sandersville site
+	kaolin highlights with the 6/7 ratio show up much more on the kaolin mine in Wrens, Georgia, which is a couple of mines Northwest of the Sandersville site (Google Earth Engine/Landsat 8)
 </span>
 
 
 <figure>
 	<img src="{{ '/img/bellingcat/kaolin-new-67.png' | prepend: site.baseurl }}" alt="main"/>
-	applying the 6/7 band ratio to the Sandersville kaolin mines and lakes
+	applying the 6/7 band ratio to the Sandersville kaolin mines and lakes (Google Earth Engine/Landsat 8)
 </figure>
 
 However, what we notice is that areas that were uniformly white in all the initial images are now much more highly contrasting -- which, if we are interested in mineral differences *within* the mining areas (rather that purely detecting them in the first place), can give us lots of information. To further highlight these differences, we can use this ratio as part of a false-colour image with other band ratios in which kaolin has a high contrast, derived from the spectral signature above.
@@ -222,6 +223,7 @@ However, what we notice is that areas that were uniformly white in all the initi
 
 <figure>
 	<img src="{{ '/img/bellingcat/clay-ratios.png' | prepend: site.baseurl }}" alt="main"/>
+	(Google Earth Engine/Landsat 8)
 </figure>
 
 Although the areas potentially containing kaolin are not necessarily the brightest (as other minerals might have higher contrasts for one or other of these ratios) we can see that they contain considerably more variation, allowing us to see much more detailed differences within potential mining and tailings areas. 
@@ -231,11 +233,11 @@ In practice, this method is still very rough. Within geological surveying, most 
 ### mining tailings in Picher, Oklahoma
 
 <span class="marginnote">
-	<img src="{{ '/img/bellingcat/picher-rgb.png' | prepend: site.baseurl }}" alt="google maps screenshot"/>true-colour satellite image of chat piles in Picher, Oklahoma
+	<img src="{{ '/img/bellingcat/picher-rgb.png' | prepend: site.baseurl }}" alt="google maps screenshot"/>true-colour satellite image of chat piles in Picher, Oklahoma (Google Earth Engine/Landsat 8)
 </span>
 
 <span class="marginnote">
-	<img src="{{ '/img/bellingcat/picher-clays.png' | prepend: site.baseurl }}" alt="google maps screenshot"/>the same area with the kaolinite band ratio comparison applied (meh)
+	<img src="{{ '/img/bellingcat/picher-clays.png' | prepend: site.baseurl }}" alt="google maps screenshot"/>the same area with the kaolinite band ratio comparison applied (meh) (Google Earth Engine/Landsat 8)
 </span>
 
 Compare the kaolin lakes to piles of 'chat' – the by-products of lead and zinc mining – in Picher, Oklahoma. Picher lies in the centre of the Tri-state Mining District, a part of the federally-designated Tar Creek Superfund site near the Oklahoma/Missouri/Kansas border. Picher was subject to deregulated lead and zinc mining for more than 100 years, with huge piles of toxic chat – typically limestone, dolomite and silica – left on the town's surface. The impact on the local area was devastating, with over 30% of the town's children in a 1994 study suffering from lead poisoning. Despite being declared to have superfund status 30 years ago, efforts to undo the damage from mining are slow, with [no date projected](https://cumulis.epa.gov/supercpad/SiteProfiles/index.cfm?fuseaction=second.cleanup&id=0601269) for when the site might be reusable.
@@ -247,13 +249,13 @@ Unlike Sandersville, the rock here does not contain large amounts of clay minera
 Geologists Sabreen Gad and Timothy Kusky developed sets of band ratios to differentiate between various rock types. In this example, we use the band ratio combination (S2/S1, S1/NIR, R/B) (e.g. 7/6, 6/5, 4/2), from [this paper](https://www.sciencedirect.com/science/article/abs/pii/S1464343X09001071) to highlight differences in the image. We can now see lots of detail in areas thst previously appeared uniform, particularly around the edges of the chat piles.
 
 <figure>
-	<img src="{{ '/img/bellingcat/gad-kusky-picher.png' | prepend: site.baseurl }}" alt="google maps screenshot"/>Picher, Oklahoma, with Gad and Kusky's band ratio applied
+	<img src="{{ '/img/bellingcat/gad-kusky-picher.png' | prepend: site.baseurl }}" alt="google maps screenshot"/>Picher, Oklahoma, with Gad and Kusky's band ratio applied (Google Earth Engine/Landsat 8)
 </figure>
 
 ## using band ratios to track bauxite mining
 
 <span class="marginnote">
-	<img src="{{ '/img/bellingcat/bauxite-rock.JPG' | prepend: site.baseurl }}" alt="google maps screenshot"/>a piece of red bauxite rock
+	<img src="{{ '/img/bellingcat/bauxite-rock.JPG' | prepend: site.baseurl }}" alt="google maps screenshot"/>a piece of red bauxite rock (Wikipedia)
 </span>
 
 Bauxite is a sedimentary rock with a high concentration of aluminium minerals, and is used as the basis for over 99% of aluminium production worldwide. Surging demand for aluminium in recent years has driven massive expansions of bauxite mining operations, at the expense of the areas from which it is extracted, and to the profit of a small number of giant mining conglomerates, the most prominent including Alcan, Alcoa and Chinalco. Increasingly, Bauxite mining operations are extending into indigenous land, and are associated with deforestation, changes to hydrology and displacement of communities.
@@ -261,7 +263,7 @@ Bauxite is a sedimentary rock with a high concentration of aluminium minerals, a
 Bauxite is extracted using large open-pit mines, and dust from the industry often spreads to cover surrounding areas, and is widely considered to be an ecological disaster. Among other factors, a key side product of bauxite extraction is 'red mud', a highly alkaline and polluting slurry that contains large amounts of iron oxide, as well as aluminium oxide components, and is usually kept in large, toxic 'tailings lakes' close to processing facilities.
 
 <span class="marginnote">
-	<img src="{{ '/img/bellingcat/red-mud-germany.jpg' | prepend: site.baseurl }}" alt="google maps screenshot"/>red mud in a tailings lake in Germany
+	<img src="{{ '/img/bellingcat/red-mud-germany.jpg' | prepend: site.baseurl }}" alt="google maps screenshot"/>red mud in a tailings lake in Germany (Wikipedia)
 </span>
 
 In addition to the aluminium minerals gibbsite and boehmite, bauxite also contains high quantities of ferric iron oxide minerals goethite and hematite, which give it its characteristic reddish colour. 
@@ -279,7 +281,7 @@ These were inspired by the approach taken in [this paper](https://www.mdpi.com/2
 ### bauxite mining in Jamaica
 
 <span class="marginnote">
-	<img src="{{ '/img/bellingcat/jamaica-mine-stann.jpg' | prepend: site.baseurl }}" alt="google maps screenshot"/>a bauxite mine in Jamaica's St Ann Parish
+	<img src="{{ '/img/bellingcat/jamaica-mine-stann.jpg' | prepend: site.baseurl }}" alt="google maps screenshot"/>a bauxite mine in Jamaica's St Ann Parish (<a href="https://jamentrust.org/">JAMEN trust</a>)
 </span>
 
 To test the efficacy of these ratio combinations, we can look first at an area with a well-documented bauxite mining industry. Bauxite has been mined in Jamaica for over 80 years, causing widespread ecological and social damage, and [most recently threatening](https://jamentrust.org/download/jet-red-dirt-book) the ecologically sensitive Cockpit County region, which had previously been protected.
@@ -289,11 +291,11 @@ When we compare an RGB image of Jamaica to one made using these three-band combi
 <figure class="fullwidth">
 	<div class="subfig">
 		<img src="{{ '/img/bellingcat/jamaica-rgb.png' | prepend: site.baseurl }}" alt="april"/>
-		<span class="mainnote">true colour satellite image of central Jamaica</span>
+		<span class="mainnote">true colour satellite image of central Jamaica (Google Earth Engine/Landsat 8)</span>
 	</div>
 	<div class="subfig">
 		<img src="{{ '/img/bellingcat/jamaica-bauxite.png' | prepend: site.baseurl }}" alt="august"/>
-		<span class="mainnote">false colour image highlighting bauxite mines</span>
+		<span class="mainnote">false colour image highlighting bauxite mines (Google Earth Engine/Landsat 8)</span>
 	</div>
 </figure>
 
@@ -301,7 +303,7 @@ By comparison to the RGB image, we’re still able to see some very obvious feat
 
 <span class="marginnote">
 	<img src="{{ '/img/bellingcat/manchester-parish.png' | prepend: site.baseurl }}" alt="main"/>
-	forest mines in Manchester Parish, highlighted using the bauxite band comparison
+	forest mines in Manchester Parish, highlighted using the bauxite band comparison (Google Earth Engine/Landsat 8)
 </span>
 
 To check that the mining sites we have found are what they seem to be, it’s possible to cross-reference government-issued mining licenses worldwide using the USGS Mineral Resources map. This is most accurate within the United States, but contains information about mines worldwide. Wikimapia also contains mines on an infrastructure layer, though they typically record fewer sites.
@@ -317,7 +319,7 @@ For a much fuller report on bauxite mining's past, future and causes in the regi
 
 <span class="marginnote">
 	<img src="{{ '/img/bellingcat/kuantan.gif' | prepend: site.baseurl }}"/><br>
-	timelapse of spreading and disappearing bauxite mines in Kuantan, Malaysia. Note – the green artefacts in the image are due to cloud cover; the striping is due to the edges of Landsat tiles.
+	timelapse of spreading and disappearing bauxite mines in Kuantan, Malaysia. Note – the green artefacts in the image are due to cloud cover; the striping is due to the edges of Landsat tiles. (Google Earth Engine/Landsat 7)
 </span>
 
 With this model, it’s possible to see changes in other mining areas. Consider the following timelapse image, showing changes to the Bukit Goh bauxite mine in the Malaysian district of Kuantan between 2012-2023. Bukit Goh lies at the epicentre of the [2015-16 Kuantan Bauxite mining disaster](https://www.bbc.co.uk/news/world-asia-35340528), which saw deregulated mining operations tear through farmland, and spread polluting bauxite dust over roads, severely polluting waterways. Changes in legislation to neighbouring Indonesia’s bauxite exports in 2014 caused demand in the region to skyrocket, with Malaysian bauxite production increasing 100-fold from 200,000 to 20 million tonnes between 2013-15. Again, the areas mined or affected by dust pollution are highlighted in a bright yellow, with healthy vegetation appearing as a darker blue.
@@ -325,11 +327,11 @@ With this model, it’s possible to see changes in other mining areas. Consider 
 <figure>
 	<div class="subfig">
 		<img src="{{ '/img/bellingcat/kuantan-2015.png' | prepend: site.baseurl }}" alt="april"/>
-		<span class="mainnote">image of a bauxite mine near Kuantan 2015</span>
+		<span class="mainnote">image of a bauxite mine near Kuantan 2015 (Google Earth Engine/Landsat 8)</span>
 	</div>
 	<div class="subfig">
 		<img src="{{ '/img/bellingcat/kuantan-2023.png' | prepend: site.baseurl }}" alt="august"/>
-		<span class="mainnote">the same mine covered with topsoil in 2023</span>
+		<span class="mainnote">the same mine covered with topsoil in 2023 (Google Earth Engine/Landsat 8)</span>
 	</div>
 </figure>
 
@@ -341,7 +343,7 @@ We can use the same technique to look at Bauxite mines in Indonesia, another cou
 
 <span class="marginnote">
 	<img src="{{ '/img/bellingcat/tayan-small.gif' | prepend: site.baseurl }}" alt="main"/>
-	timelapse of pausing then spreading bauxite mine expansion around the Kapuas river, near the village of Tayan Hilir, Indonesia
+	timelapse of pausing then spreading bauxite mine expansion around the Kapuas river, near the village of Tayan, Indonesia (Google Earth Engine/Landsat 8)
 </span>
 
 A [2015 study](https://www.iss.nl/sites/corporate/files/CMCP_81_Pye_et_al.pdf) of land grabs in the region directly linked the drying of a lake to bauxite mining expansion in 2013-14, and named bauxite extraction as part of a linked set of extractive industries encroaching on indigenous peoples’ livelihoods. While bauxite extraction slowed after Indonesia’s 2014 policy to end exports of the mineral, local people have been offered little other than financial compensation (‘dust money’) for the damage done, with mines still expanding in some areas, and little to no remediation with topsoil.
@@ -350,7 +352,7 @@ If we take a timelapse of an area around the Kapuas river (the area in the above
 
 <span class="marginnote">
 	<img src="{{ '/img/bellingcat/bauxite-indonesia.png' | prepend: site.baseurl }}"/><br>
-	chart of changing Indonesian bauxite production, 2014-2023
+	chart of changing Indonesian bauxite production, 2014-2023 (data from <a href="https://www.usgs.gov/centers/national-minerals-information-center/bauxite-and-alumina-statistics-and-information">USGS mineral commodity summaries</a>)
 </span>
 
 This timelapse mirrors the [USGS mineral commodity summaries](https://www.usgs.gov/centers/national-minerals-information-center/bauxite-and-alumina-statistics-and-information) figures for Indonesia’s bauxite production during that timeframe: a significant drop following the export ban in 2014, followed by an increase in subsequent years.
@@ -361,6 +363,7 @@ The Indonesian government also maintains a [detailed interactive map](https://ge
 
 <figure>
 	<img src="{{ '/img/bellingcat/tayan-minerals.png' | prepend: site.baseurl }}" alt="main"/>
+	(Google Earth Engine/Landsat 8)
 </figure>
 
 What band ratios give us in each of these cases is a tool to highlight change far beyond what could be seen using visible-range images. As a use-case, mining gives us a particular set of cross-referencing tools, including both geophysical and economic tools more commonly used for prospecting.
@@ -400,7 +403,7 @@ Another key limitation to satellite imaging work is the presence of clouds, and 
 
 <span class="marginnote">
 	<img src="{{ '/img/bellingcat/clouds-aligned.png' | prepend: site.baseurl }}" alt="main"/>
-	artefacts in a river in the Amazonas basin turn out just to be clouds when examined in RGB...
+	artefacts in a river in the Amazonas basin turn out just to be clouds when examined in RGB... (Google Earth Engine/Landsat 8)
 </span>
 
 Lastly, when using satellite imagery it can be tempting to draw premature conclusions about the meaning of different zones and artefacts. For example, one might note that an area appears to have very high concentrations of Ferrous Sulphate, as the wavebands associated with FeSO3 are bright in images tuned to detect those wavelengths. However, there are a range of other minerals that might also follow a similar reflectance pattern. One way around this is to match up with what is on the ground, or use it as an indicator in conjunction with other evidence. Rarely, if ever, is satellite imaging alone enough to confirm or deny the presence of a substance, but it can be a very useful tool to provide clues, and to demonstrate changes over time.
@@ -418,7 +421,7 @@ The website IndexDB is a fantastic resource for finding possible indices and ban
 
 <span class="marginnote">
 	<img src="{{ '/img/bellingcat/idb-metals.png' | prepend: site.baseurl }}" alt="main"/>
-	search results for the application 'Heavy Metals Contamination', showing possible indices and sensors with relevant bands
+	search results for the application 'Heavy Metals Contamination', showing possible indices and sensors with relevant bands (IndexDB)
 </span>
 
 For example -- if I am interested in looking at heavy metals pollution in topsoil, I can select this application, and see a list of relevant indices. Choosing one of these (e.g. FeO3) will bring up a list of sensors with bands suitable for calculating the relevant ratios. Selecting one of the listed sensors will then bring up the calculation with the relevant bands for that dataset, along with references to literature.
@@ -453,7 +456,7 @@ Multispectral satellite imaging provides a broad and varied range of information
 
 <span class="marginnote">
 	<img src="{{ '/img/bellingcat/vegetation-new-orleans.png' | prepend: site.baseurl }}" alt="vegetation health"/>
-	a Near Infrared band comparison image of the New Orleans bayou
+	a Near Infrared band comparison image of the New Orleans bayou (Google Earth Engine/Landsat 8)
 </span>
 
 
