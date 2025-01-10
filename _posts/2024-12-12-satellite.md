@@ -165,7 +165,7 @@ It would be tempting to conclude that this is where the kaolin mines are, but ch
 	<img src="{{ '/img/bellingcat/sandersville-mines.png' | prepend: site.baseurl }}" alt="main"/>
 </figure>
 
-If we zoom into one of these mines, in Deepstep, we can see in detail what is being highlighted. Note that the two Google Earth Engine images appear pixellated at this scale, but the Google Maps image on the right is still high-resolution. That's because Google Maps uses a bunch of different data, included private data, composited together to make its maps.
+If we zoom into one of these mining areas -- marked as Southeastern Performance Minerals LLC on Google Maps -- we can see in detail what is being highlighted. Note that the two Google Earth Engine images appear pixellated at this scale, but the Google Maps image on the right is much higher resolution. That's because Google Maps uses a bunch of different data, included private data, composited together to make its maps.
 
 <figure>
 	<div class="subfigthird">
@@ -180,7 +180,6 @@ If we zoom into one of these mines, in Deepstep, we can see in detail what is be
 		<img src="{{ '/img/bellingcat/deepstep-circled-lakes.png' | prepend: site.baseurl }}" alt="august"/>
 		<span class="mainnote">with salient features circled</span>
 	</div>
-	comparing images of the Deepstep mine in the top central part of the image
 </figure>
 
 By zooming in further to Google maps, the features most highlighted appear to be either lakes or lake beds. These may have a high kaolin content (and also may well be tailings lakes from mines!) but they aren't exactly what we were looking for -- so what happened?
