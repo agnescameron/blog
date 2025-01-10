@@ -170,7 +170,7 @@ If we zoom into one of these mines, in Deepstep, we can see in detail what is be
 <figure>
 	<div class="subfigthird">
 		<img src="{{ '/img/bellingcat/deepstep-764.png' | prepend: site.baseurl }}" alt="april"/>
-		<span class="mainnote">deepstep in the 7,6,4 image</span>
+		<span class="mainnote">in the 7,6,4 image</span>
 	</div>
 	<div class="subfigthird">
 		<img src="{{ '/img/bellingcat/deepstep-57.png' | prepend: site.baseurl }}" alt="august"/>
@@ -178,8 +178,9 @@ If we zoom into one of these mines, in Deepstep, we can see in detail what is be
 	</div>
 	<div class="subfigthird">
 		<img src="{{ '/img/bellingcat/deepstep-circled-lakes.png' | prepend: site.baseurl }}" alt="august"/>
-		<span class="mainnote">and with the salient features circled</span>
+		<span class="mainnote">with salient features circled</span>
 	</div>
+	comparing images of the Deepstep mine in the top central part of the image
 </figure>
 
 By zooming in further to Google maps, the features most highlighted appear to be either lakes or lake beds. These may have a high kaolin content (and also may well be tailings lakes from mines!) but they aren't exactly what we were looking for -- so what happened?
@@ -195,7 +196,14 @@ If we look at the spectral signature for *turbid* water with clay minerals with 
 	<img src="{{ '/img/bellingcat/kaolin-turbid.png' | prepend: site.baseurl }}" alt="main"/>
 </figure>
 
+
 So - how do we see kaolin? When looking up the correct band ratio for kaolin (and clay minerals generally), most sources suggest [6/7](https://pro.arcgis.com/en/pro-app/latest/arcpy/spatial-analyst/clayminerals.htm) rather than 5/7. If we look at the spectral signatures above, we can see that this will also resolve our issue with turbid water, as the signature is low for both bands 6 and 7 in this instance. However, imaging the area using this ratio initially seems quite disappointing. 
+
+<span class="marginnote">
+	<img src="{{ '/img/bellingcat/wrens-mine.png' | prepend: site.baseurl }}"/>
+	kaolin highlights with the 6/7 ratio show up much more on the kaolin mine in Wrens, Georgia, which is a couple of mines Northwest of the Sandersville site
+</span>
+
 
 <figure>
 	<img src="{{ '/img/bellingcat/kaolin-new-67.png' | prepend: site.baseurl }}" alt="main"/>
