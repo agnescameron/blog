@@ -3,7 +3,7 @@ layout: post
 title:  "tracking mining with multispectral satellite imagery"
 author: agnes cameron
 date:  2025-01-10
-description: writeup of research project for Bellingcat
+description: writeup of Bellingcat Technical Writing fellowship project
 tags: satellite, mining
 status: published
 image: '/img/bellingcat/tayan-full-2.png'
