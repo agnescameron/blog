@@ -13,7 +13,7 @@ image: '/img/bellingcat/tayan-full-2.png'
 
 <figure class="fullwidth">
 	<img src="{{ '/img/bellingcat/tayan-full-2.png' | prepend: site.baseurl }}" alt="main"/>
-	<span class="mainnote">a false colour satellite image of bauxite mines (yellow, with white centres) and [palm oil plantations](https://developers.google.com/earth-engine/datasets/catalog/BIOPAMA_GlobalOilPalm_v1) (green-brown grids) near the Kapuas river, West Kalimantan (Google Earth Engine / Landsat 8)</span>
+	<span class="mainnote">a false colour satellite image of bauxite mines (yellow, with white centres) and <a href="https://developers.google.com/earth-engine/datasets/catalog/BIOPAMA_GlobalOilPalm_v1">palm oil plantations</a> (green-brown grids) near the Kapuas river, West Kalimantan (Google Earth Engine / Landsat 8)</span>
 </figure>
 
 Satellite images we encounter on platforms like Google Earth are typically rendered in 'true colour', which emulates how a scene might look when viewed with the naked eye. This rendering mode is natural, and is useful for producing images where the contents are easily recognisable. 
