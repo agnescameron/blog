@@ -313,7 +313,8 @@ To check that the mining sites we have found are what they seem to be, it’s po
 	<span class="mainnote">A screenshot of Jamaica rendered on the <a href="https://mrdata.usgs.gov/general/map-global.html">USGS Mineral Resources Online Spatial Data</a> map tool, showing mines (past and present) in red, prospects in green and processing plants in blue. It’s possible to see right away the bright yellow areas in the south centre of the satellite match up with the large number of mines south of Mandeville on the USGS map.</span>
 </figure>
 
-For a much fuller report on bauxite mining's past, future and causes in the region, Jamaica Environmental Trust produced a research report entitled [Red Dirt](https://jamentrust.org/download/jet-red-dirt-book).
+For a much fuller report on bauxite mining's past, future and causes in the region, Jamaica Environmental Trust produced a research report entitled [Red Dirt](https://jamentrust.org/download/jet-red-dirt-book). In particular, Chapter 5 -- Degradation of Ecological
+Heritage by ecologist Susan Koenig -- provides a detailed overview and analysis of the close relationship between geology and ecology on the region, and the long term impact of surface mining on soil and air quality and the karst water cycle.
 
 ### Kuantan mining disaster
 
