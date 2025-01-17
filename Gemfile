@@ -30,3 +30,5 @@ end
 
 
 gem "webrick", "~> 1.7"
+
+gem 'sassc', '~> 2.1'
