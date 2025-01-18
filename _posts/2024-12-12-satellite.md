@@ -144,7 +144,7 @@ In order to match up what we're seeing in the satellite image to the material we
 Below is the reflectance spectrum of kaolinite, marked in red, with the relevant Landsat bands marked in navy blue overlaid. This image was made using the [USGS Spectral Characteristics Viewer](https://landsat.usgs.gov/spectral-characteristics-viewer), which allows you to map the reflectance spectrum of a mineral of interest against the bands of different satellite sensors, including the Landsat and Sentinel satellites.
 
 <figure>
-	<img src="{{ '/img/bellingcat/kaolinite-reflectance.png' | prepend: site.baseurl }}" alt="main"/> (Google Earth Engine/Landsat 8)
+	<img src="{{ '/img/bellingcat/kaolinite-reflectance.png' | prepend: site.baseurl }}" alt="main"/>
 </figure>
 
 The reason that kaolinite looks white in the first two images is that bands 2, 3, 4, 5 and 6 all have a high reflectance -- so when those bands are slotted into the R,G,B channels of an image, they are all uniformly bright. However, we can see that the reflectance dips around 1.4μm, and that it drops off sharply after a wavelength of 2μm. Thus -- much less light is reflected in band 7 (SWIR 2), meaning that in the 7, 6, 4 image, the G and B channels are bright but R is dark, hence cyan.
