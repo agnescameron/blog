@@ -374,10 +374,14 @@ h3 > code {
 
 pre > code {
     font-size: 1.2rem;
-    width: 52.5%;
+    width: 52%;
     margin-left: 2.5%;
-    overflow-x: auto;
     display: block;
+    white-space: pre-wrap;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
 
 pre.fullwidth > code {
