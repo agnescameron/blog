@@ -154,7 +154,7 @@ I really like seeing which things get connected (and by what!) and which are lef
 </span>
 
 
-A big influence on this project is the work of [Patrick Gunkel](http://ideonomy.mit.edu/), founder and core proponent of the field of _ideonomy_-- the science of ideas. Many years ago my friend SJ introduced me to Gunkel's work, via the masterpiece *'An Idea Tree'* (small version right), which takes the initial idea of allanto (sausage-like) foods, andd follows multiple 'hints' and 'interpretations' to theorise, for example, the appearence of mochi ice cream some decades before its introduction into Gunkel's native Texas.
+A big influence on this project is the work of [Patrick Gunkel](http://ideonomy.mit.edu/), founder and core proponent of the field of _ideonomy_-- the science of ideas. Many years ago my friend SJ introduced me to Gunkel's work, via the masterpiece *'An Idea Tree'* (small version right), which takes the initial idea of allanto (sausage-like) foods, and follows multiple 'hints' and 'interpretations' to theorise, for example, the appearence of mochi ice cream some decades before its introduction into Gunkel's native Texas.
 
 This tree of sausage-inspired innovation follows a surprisingly similar set of jumps to the map of dishes, albeit with the latter feeling less self-consciously 'innovative'. The forking, folding path -- the 'staple' hint, the 'deep frying' hint -- unfolds layers of different ideas and techniques that have built up between cuisines over time.
 
@@ -163,6 +163,8 @@ This tree of sausage-inspired innovation follows a surprisingly similar set of j
 </figure>
 
 I'm a big admirer of Gunkel's broader work for his interest in applying extraordinarily thorough, scientific and detailed methods to further the understanding of fleeting, subjective and slippery ideas. His articulations don't pin them down, so much as flesh them out -- expanding their descriptive possibilities by searching for many definitions within them. It's a form of inquiry that feels genuinely *inquisitive*, and is also extremely funny -- a couple of my other favourites are his map of mutual analogousness of ['Examples and Sources of Beauty'](https://ideonomy.mit.edu/scanned-charts/pic044.html), and another tree ['Illusions re: A Stone'](https://d2w9rnfcy7mm78.cloudfront.net/33837629/original_ed5eb0ea5fb755ee2426593e579d45a8.jpg?1737415310?bc=0).
+
+Without wanting to overstate here, I think this is quite a good example of what science should be *for* -- the use of the constraint of objectivity as a flexible tool to expand the kind of questions that we're able to ask about human endeavours, to expand our imaginitive landscape. Gunkel's [method](https://ideonomy.mit.edu/intro.html) is extremely fastidious and thorough<label for="gunkeling" class="margin-toggle sidenote-number"></label><span class="sidenote" id="gunkeling">'gunkeling' is a classic example of something that looks really easy until you try it</span>, and takes abstract things very seriously, delighting in the non-obvious links that can be made between different ideas.
 
 <!-- ## trying some more complex queries
 
