@@ -19,8 +19,11 @@ I've been working on a [research project](https://cci.arts.ac.uk/~material/) wit
 </figure>
 
 <span class="marginnote">
-	<img src="{{ '/img/knitout/vector-tiles.png' | prepend: site.baseurl }}"/>big fan of the knitout visualiser stitch svg reference file
+	<img src="{{ '/img/knitout/vector-tiles.png' | prepend: site.baseurl }}"/>
+	<!-- <img src="{{ '/img/knitout/face-notes.png' | prepend: site.baseurl }}"/> -->
+	big fan of the knitout visualiser stitch svg reference files
 </span>
+
 
 ## what is knitout?
 
@@ -124,3 +127,55 @@ What was very helpful was going through the entire process -- including at diffe
 * why is the waste yarn addition 1 stitch less wide than the eventual pattern?
 * is there a major difference between what's possible in the Python and JS packages? or the intention to be?
 * at present, because the code is spread across so many repositories but -- in the case especially of the backend -- seems to need to be quite interoperable, it feels a bit like version changes between different repos might introduce a lot of issues
+
+## attempt 2 -- testing different tools
+
+Today, I wanted to experiment with more recently developed JS-based tools that automate slightly more of the tasks. Repositories used in this round:
+
+* **[knitout examples](https://github.com/textiles-lab/knitout-examples/tree/master)** (like before -- testing out more js files)
+* Gabrielle Ohlson's **[knitout image processing](https://github.com/gabrielle-ohlson/knitout-image-processing)** repository, which automatically generates waste section and bind-off, plus has some automated shaping tools
+
+### 1 -- fairisle
+
+<span class="marginnote">
+	<img src="{{ '/img/knitout/fairisle-image-script.jpg' | prepend: site.baseurl }}"/>
+	generated with the fairisle image script
+</span>
+
+The first pattern I tried to use was the fairisle generating file `fairisle-image.js` in the examples repository. Somewhat misleadingly, this file won't work in the frontend visualsiser interface, as it makes calls to the local filesystem so has to be run using node.
+
+When I do use it in the correct way:
+
+```
+$ node fairisle-image.js fairisle-test.png > fairisle-test.k
+```
+It works really well. Another small note -- transparent background pngs get read as black not white, which initially caused some issues, but when I made the background white it was fine.
+
+I didn't try adding the waste / bindoff to this yet but thought it came out okay.
+
+
+### 2 -- knitout image processing
+
+<span class="marginnote">
+	<img src="{{ '/img/knitout/colourwork-test.png' | prepend: site.baseurl }}"/>
+	results from image processing, with waste and bindoff
+</span>
+
+This seems a [really promising](https://gabrielle-ohlson.github.io/knitout-image-processing/#prompts) interface to do a bunch of different operations that previously were scattered across a lot of the different CMU repositories.
+
+Using the same image, I tried using the `knitify` file. The command line interface took me a minute to get used to -- it 'autopresses' enter once you type a y/n for the yes/no questions, which I kept getting tripped up on. Knitify is launched using the following:
+
+
+```
+npm run knitify
+```
+
+You then proceed to specify the file. This initially seemed more kniterate friendly, though the code for kniterate had a fatal bug encountered when changing the waste settings, caused by a typo (was also easily solved), which does indicate that this has probably been tested a bit more on the Shima.
+
+Once the bug was fixed, I kept getting a more persistent bug about the carriers:
+
+```
+Assertion failed: no carrier found for leftover needle: 100 (@ row 1)
+```
+
+It still allowed me to write out the file, but this is something I want to try fixing. There is also a more general carrier issue, in that it doesn't let you specify which carrier you want to use for what during the setup. At least for us, on the Kniterate, carriers 1 and 6 are reserved for the draw thread and waste yarn specifically, but in this instance carriers 1 and 2 are automatically used for the pattern.
