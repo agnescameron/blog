@@ -179,3 +179,67 @@ Assertion failed: no carrier found for leftover needle: 100 (@ row 1)
 ```
 
 It still allowed me to write out the file, but this is something I want to try fixing. There is also a more general carrier issue, in that it doesn't let you specify which carrier you want to use for what during the setup. At least for us, on the Kniterate, carriers 1 and 6 are reserved for the draw thread and waste yarn specifically, but in this instance carriers 1 and 2 are automatically used for the pattern.
+
+\< tests of this coming soon \>
+
+### 3 -- autoknit
+
+For the third set of tests, we wanted to experiment with the [autoknit](github.com/textiles-lab/autoknit) repository, which can be used to turn 3D meshes into corresponding knitting patterns. This is probably the arena where it feels most difficult to adapt to working with the kniterate, though also poses a lot of really interesting questions. Without thorougly testing these it feels hard to draw conclusions but also I wanted to document where we'd got to.
+
+### process
+
+We follow the process outlined in the [autoknit](https://github.com/textiles-lab/autoknit) repository -- reproduced here in a condensed form (with example .obj file 'simple cone'). Somewhat messily, I worked with everything inside the `dist` folder -- I'd probably like to move it into its own folder in the future.
+
+```
+1- create the constraints:
+$ ./interface obj:simple-cone.obj constraints:simple-cone.cons
+
+2- use the constraints to make the mesh
+$ ./interface obj:simple-cone.obj load-constraints:simple-cone.cons obj-scale:20.0 stitch-width:3.66 stitch-height:1.73 save-traced:simple-cone.st
+
+3- scheduling
+$ ./schedule st:simple-cone.st js:simple-cone.js
+
+* after this step! modify the JS file for kniterate as below*
+
+4- make knitout
+NODE_PATH=.. node simple-cone.js out:simple-cone.k
+```
+
+<span class="marginnote">
+	<img src="{{ '/img/knitout/cone-placement.png' | prepend: site.baseurl }}"/>
+	placing constraints on the cone
+</span>
+
+The placing of the constraints was the most tricky to get used to as the instructions were a little confusing.
+
+1. place a constraint by pressing 'c'
+2. press 'c' again and move the mouse, to drag a line out and place the *next* constraint
+3. click to finish the line, then repeat steps 2 and 3
+4. once the lines are added, order them by pressing the plus and minus keys. not sure of best ordering strategy yet (need to test this)
+
+<span class="marginnote">
+	<img src="{{ '/img/knitout/cone-peeling.png' | prepend: site.baseurl }}"/>
+	peeling the cone
+</span>
+
+When we talked about these first files, B thought that even more than previously, these files seemed very Shima-y. A bit later, this was confirmed when I came across the following paragraph in Gabrielle Ohlson's [knitout-backend-kniterate](https://github.com/textiles-lab/knitout-backend-kniterate) repository:
+
+> *You may have come across autoknit, an exciting project by the Textiles Lab that converts 3D meshes to knitout. As of now, autoknit doesn't play too nicely with the kniterate, since the kniterate is lacking some features that make 3D-knitting a bit difficult (e.g. high-level take-down mechanisms [sinkers], consistently reliable transfer-mechanisms [sliders], etc.). With the hope of some day figuring it out, autoknit-kniterate.js was created so that autoknit can at least produce files that will safely run on the kniterate*
+
+We followed the steps she suggests:
+* move `autoknit-kniterate.js` into the node_modules folder within autoknit
+* after producing the js file (step 3), open that js file in a text-editor and change this line of code (line #1): `const autoknit = require('autoknit-yarns');` to this: `const autoknit = require('autoknit-kniterate');`
+
+Here's the difference between the two files, when viewed in the visualiser:
+
+<figure width="400">
+	<div class="subfig">
+		<img src="{{ '/img/knitout/cone-shima.png' | prepend: site.baseurl }}" alt="april"/>
+		<span class="mainnote">cone not adapted for kniterate</span>
+	</div>
+	<div class="subfig">
+		<img src="{{ '/img/knitout/cone-kniterate.png' | prepend: site.baseurl }}" alt="august"/>
+		<span class="mainnote">cone adapted for kniterate</span>
+	</div>
+</figure>
