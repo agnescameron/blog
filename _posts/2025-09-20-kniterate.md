@@ -243,3 +243,4 @@ Here's the difference between the two files, when viewed in the visualiser:
 		<span class="mainnote">cone adapted for kniterate</span>
 	</div>
 </figure>
+
