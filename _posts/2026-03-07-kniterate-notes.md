@@ -52,7 +52,7 @@ It was also interesting to compare the kniterate interface both to the knitout v
 
 In the photos below you can see how the two rows of yarn 1, the drawthread, (orange in the kniterate interface and bright pink in the sample), are integrated into the design. Yarn 6, the waste yarn (green in the interface and orange in the sample), alternates between the back and front beds initially, before a row of the main yarn (yarn 4, double stranded blue/yellow in the sample) is brought in.
 
-<figure class="fullwidth">
+<figure>
 	<div class="subfig">
 		<img src="{{ '/img/kniterate/cast-on-file-2.png' | prepend: site.baseurl }}"/>
 	</div>
@@ -66,7 +66,7 @@ The other thing that this made me realise was that an obvious first step for imp
 
 At present, the waste section appended by knitout-backend-kniterate has a number of similar aspects -- the row where the rear stitches are dropped, followed by the drawthread row (the last row of purple waste yarn, then red drawthread) seems to be the same as in the kniterate file. Similarly (but harder to see), the section of waste yarn where the front and back-bed stitches are alternated is followed by a few rows of them being knitted separately (you can see this in the knitout visualiser when the threads cross back and forth) is the same in both files. However, the knitout equivalent is missing the rows where the main yarn and drawthread are being brought into work, which might be partly why the machine struggles to knit these files.
 
-<figure class="fullwidth">
+<figure>
 	<div class="subfig">
 		<img src="{{ '/img/kniterate/knitout-waste.png' | prepend: site.baseurl }}"/>
 	</div>
