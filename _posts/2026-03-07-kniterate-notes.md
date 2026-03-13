@@ -120,7 +120,7 @@ You can see in this sample that adjacent transfers take place over multiple rows
 
 The last part of making a pattern is adding a bind off, and going through the checks process. The checks will highlight things like, for example, the bindoff starting on the wrong side (it will throw this error by saying the 'float' is too long -- as the carriage has to jump from one side to another). The bindoff itself looks like a huge triangle, but it's similar to the transfers in that it's just moving and binding off one stitch per row -- the end result is just a neatly knit straight line.
 
-## Knitting out
+## knitting out
 
 The file we ended up knitting was one made by Rosie, who is the other e-textiles technician at CCI. She'd gone with a pattern that spelled her name, using a similar technique of the horse jumper of a flat area surrounded by ribs. After a couple of false starts (with feeders ending up where they shouldn't be), the machine knit it out!
 
@@ -128,3 +128,20 @@ The file we ended up knitting was one made by Rosie, who is the other e-textiles
 	<img src="{{ '/img/kniterate/rosie-sample.jpeg' | prepend: site.baseurl }}"/>
 	Rosie's plating rib sample
 </figure>
+
+## final thoughts
+
+In some ways, I'm struck by how much *less* informative the knitout stitch visualiser is than the kniterate one. It feels like the difference between a tinkercad drawing and a circuit diagram -- with the former being more useful for people with no electronics experience in representing how a circuit will *look*, but being ultimately very limited in terms of participation in the wider symbolic language of the field. Even spending a morning with the kniterate visualiser, the symbolic language is so much clearer.
+
+Perhaps this makes sense -- the knitout visualiser was designed by non-knitters / the text parallel (which is super useful) provides a specific understanding of the pattern. But I do think making a visualisation interface readable by knitters seems pretty important, and is maybe another step that's needed in developing the tool.
+
+<figure>
+	<div class="subfig">
+		<img src="{{ '/img/kniterate/latching-tinkercad.png' | prepend: site.baseurl }}"/>
+	</div>
+	<div class="subfig">
+		<img src="{{ '/img/kniterate/latching-schematic.png' | prepend: site.baseurl }}"/>
+	</div><br>
+	<span class="mainnote">A tinkercad pictoral representation of a circuit (left) vs a circuit diagram, or schematic representation (right). Although the picture can be easier to make sense of for a beginner, it's much harder to clearly read and analyse the circuit, making it much less usable for someone who needs to understand the circuit (and in a sense, much less <i>malleable</i>)</span>
+</figure>
+
