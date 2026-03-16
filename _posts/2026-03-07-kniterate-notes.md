@@ -107,8 +107,8 @@ The other nice thing about plating is that it doesn't require anything complicat
 To start editing the file, we added a 'free edit' layer -- these allow you to change the type of stitches being used. I used the paint tools to add sections of rib, alternating columns (wales) of front and back bed knitting. In order for this to be safely knit by the machine, transfers also need to be added. For this, a layer called 'Front <> Rear Transfers' is used, which will automatically plan transfers in a selection.
 
 <figure>
-	<img src="{{ '/img/kniterate/transfers.png' | prepend: site.baseurl }}"/>
-	some of B's samples that use plating. Note that sometimes the front/back bed catching isn't perfect -- you can see the rear yarn coming through at the edges of the wavy orange sample, creating a slight marl. In the top sample, the brighter green yarn also has higher elasticity, creating a difference in texture.
+	<img src="{{ '/img/kniterate/transfers-2.png' | prepend: site.baseurl }}"/>
+	a section of the rib sample in the kniterate software, showing transfers between beds at the start and end of the rib section. You can see transfers from the (dark) back bed to the (light) front bed indicated by a down-pointing arrow in the rows before the yarn 3 section, and the up arrows indicating where stitches are transferred to the back bed for the next rows of rib. Notice that where there are multiple adjacent transfers this takes place over 2 rows.
 </figure>
 
 <span class="marginnote">
