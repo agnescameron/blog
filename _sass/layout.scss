@@ -207,6 +207,21 @@ li:not(:first-child) {
     margin-top: 0.25rem; 
 }
 
+table {
+    border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  font-weight: bold;
+}
+
 figure {
     padding: 0;
     border: 0;
@@ -350,9 +365,16 @@ div.table-wrapper {
     letter-spacing: .03em; 
 }
 
-code, pre > code {
+code {
     font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
     font-size: 1rem;
+    line-height: 1.2;
+    -webkit-text-size-adjust: 100%; /* Prevent adjustments of font size after orientation changes in iOS. See https://github.com/edwardtufte/tufte-css/issues/81#issuecomment-261953409 */
+}
+
+pre > code {
+    font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-size: 1rem !important;
     line-height: 1.2;
     -webkit-text-size-adjust: 100%; /* Prevent adjustments of font size after orientation changes in iOS. See https://github.com/edwardtufte/tufte-css/issues/81#issuecomment-261953409 */
 }
