@@ -8,14 +8,12 @@ status: published
 image: '/img/kniterate-code/correspondence.png'
 ---
 
-B, Rosie and I met this week to work on knitout generation for the Kniterate, and plan the first programming-based session for the [material programming](https://cci.arts.ac.uk/~material/) workshop series. We started by trying to articulate exactly what it is we're trying to achieve -- both with the workshops, and with the project more generally -- in concrete, technical terms.
+B, Rosie and I met this week to work on knitout generation for the Kniterate, and plan the first programming-based session for the [material programming](https://cci.arts.ac.uk/~material/) workshop series. We started by trying to articulate exactly what it is we're trying to achieve (both with the workshops, and with the project more generally) in concrete, technical terms:
 
 <span class="marginnote">
     <img src="{{ '/img/kniterate-code/mods-milling.png' | prepend: site.baseurl }}"/>
     A 2.5D milling workflow for the Roland MDX20 in <a href="https://modsproject.org/">mods</a>. The same workflow could easily be adapted for another mill, a laser cutter, vinyl cutter or embroidery machine.
 </span>
-
-We got to the following summary:
 * open knitting file formats are in a ~larval stage and aren't widely used outside of academia
 * in general, interesting (open-source, malleable) CAD software benefits hugely from the benefit and adoption of machine-agnostic and interchangeable file formats
 * the adoption of new kinds of file format requires usable and accessible tooling: it's not enough for them to just exist
