@@ -17,11 +17,11 @@ B, Rosie and I met this week to work on knitout generation for the Kniterate, an
 
 We got to the following summary:
 * open knitting file formats are in a ~larval stage and aren't widely used outside of academia
-* long-term, new and interesting (open-source, malleable) knit software will be machine agnostic, and so will rely on these formats
-* the adoption of new kinds of file format requires usable and accessible tooling
+* in general, interesting (open-source, malleable) CAD software benefits hugely from the benefit and adoption of machine-agnostic and interchangeable file formats
+* the adoption of new kinds of file format requires usable and accessible tooling: it's not enough for them to just exist
 * if we can make something our students can use, chances are other people will be able to use it too
 
-A big part of this work is to get the existing tools into a form people can use, while also properly articulating the backend structure both for ourselves and for anyone else who wants to tinker with things under the hood. Examples of places this has been done well include the [mods project](https://modsproject.org/), a modular tool for rapid prototyping used for the control and automation of a wide variety of CAD machines, open-source 3D printing software in general, and open-source embroidery projects like [PEMbroider](https://github.com/CreativeInquiry/PEmbroider) and [p5.embroider](https://github.com/nkymut/p5.embroider).
+A big part of this work is to get the existing tools into a form our students can use, while also properly articulating the backend structure both for ourselves and for anyone else who wants to tinker with things under the hood. Examples of places this has been done well in the wider world include the [mods project](https://modsproject.org/), a modular tool for rapid prototyping used for the control and automation of a wide variety of CAD machines, open-source 3D printing software, and open-source embroidery projects like [PEMbroider](https://github.com/CreativeInquiry/PEmbroider) and [p5.embroider](https://github.com/nkymut/p5.embroider).
 
 ## open knitting file formats
 
