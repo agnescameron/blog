@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "knit file formats"
+title:  "knitout and kniterate 2"
 author: agnes cameron
 date:  2026-03-25
-description: adapting knitout->kniterate conversion tools
+description: file formats, and remaking the kniterate waste section
 status: published
 image: '/img/kniterate-code/correspondence.png'
 ---

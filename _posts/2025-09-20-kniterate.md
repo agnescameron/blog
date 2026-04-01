@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "knitout and kniterate"
+title:  "knitout and kniterate 1"
 author: agnes cameron
 date:  2025-09-20
 description: making friends with the knitout file format

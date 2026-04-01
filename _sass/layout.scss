@@ -232,6 +232,9 @@ figure {
     -webkit-margin-start: 0;
     -webkit-margin-end: 0;
     margin: 0 0 3em 0; 
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 figcaption {
@@ -248,6 +251,12 @@ figcaption {
 
 figure.fullwidth figcaption {
     margin-right: 24%; 
+}
+
+figure .mainnote {
+    flex-basis: 100%;
+    display: block;
+    margin-top: 0.5rem;
 }
 
 /* Links: replicate underline that clears descenders */
@@ -305,14 +314,18 @@ img {
     position: relative;
 }
 
-.subfig {
-    width: 47%;
-    display: inline-block;
+.subfig,
+.subfigthird {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
 }
 
-.subfigthird {
-    width: 32%;
-    display: inline-block;
+.subfig img,
+.subfigthird img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
 span.mainnote {
@@ -518,7 +531,7 @@ label.margin-toggle:not(.sidenote-number) {
     }
 
     figure {
-        max-width: 95%; 
+        max-width: 95%;
     }
     
     figcaption,
