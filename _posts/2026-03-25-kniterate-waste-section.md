@@ -1,12 +1,14 @@
 ---
 layout: post
-title:  "knitout and kniterate 2"
+title:  "kniterate notes 3"
 author: agnes cameron
 date:  2026-03-25
-description: file formats, and remaking the kniterate waste section
+description: knitout and kcode file formats, making a better waste section
 status: published
 image: '/img/kniterate-code/correspondence.png'
 ---
+
+<p class="topnote">This is the third in a series of blog posts about the <a href="https://cci.arts.ac.uk/~material/">Material Programming Project</a>. We are developing malleable knitting software for the <a href="https://www.kniterate.com/">Kniterate</a>, a semi-industrial knitting machine. The first post, on the Knitout project, is available <a href="https://soup.agnescameron.info/2025/09/20/kniterate.html">here</a>, and a longer post about the Kniterate machine is <a href="https://soup.agnescameron.info/2026/03/07/kniterate-notes.html">here</a>. The <a href="https://soup.agnescameron.info/2026/04/01/transfers.html">next post</a> includes more detail about Kcode.</p>
 
 B, Rosie and I met this week to work on knitout generation for the Kniterate, and plan the first programming-based session for the [material programming](https://cci.arts.ac.uk/~material/) workshop series. We started by trying to articulate exactly what it is we're trying to achieve (both with the workshops, and with the project more generally) in concrete, technical terms:
 

@@ -1,12 +1,14 @@
 ---
 layout: post
-title:  "knitout and kniterate 3"
+title:  "kniterate notes 4"
 author: agnes cameron
 date:  2026-04-01
 description: ribbers, tests, transfers, and casting off
 status: published
 image: '/img/kniterate-3/comparison-caston.jpg'
 ---
+
+<p class="topnote">This is the fourth in a series of blog posts about the <a href="https://cci.arts.ac.uk/~material/">Material Programming Project</a>. We are developing malleable knitting software for the <a href="https://www.kniterate.com/">Kniterate</a>, a semi-industrial knitting machine. The first post, on the Knitout project, is available <a href="https://soup.agnescameron.info/2025/09/20/kniterate.html">here</a>, a longer post about the Kniterate machine is <a href="https://soup.agnescameron.info/2026/03/07/kniterate-notes.html">here</a>, and a guide to the different file formats is <a href="https://soup.agnescameron.info/2026/03/25/kniterate-waste-section.html">here</a>.</p>
 
 This week I learned 2-bed knitting on the domestic machine, and made some progress on the Knitout-> Kniterate code visualiser. We also managed to get a bunch of tests to run on the Kniterate, most of which worked fairly well. We also visited an exhibition of some work by visiting students from NAFA (Nanyang Academy of Fine Art Singapore), which featured a really great and inspiring bit of Kniterate work.
 

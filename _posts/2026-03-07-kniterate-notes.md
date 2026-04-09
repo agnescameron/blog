@@ -1,13 +1,15 @@
 ---
 layout: post
-title:  "kniterate notes"
+title:  "kniterate notes 2"
 author: agnes cameron
 date:  2026-03-07
-description: first material programming workshop
+description: learning more about the kniterate machine
 tags: textiles, open-source
 status: published
 image: '/img/kniterate/crowd.jpeg'
 ---
+
+<p class="topnote">This is the second in a series of blog posts about the <a href="https://cci.arts.ac.uk/~material/">Material Programming Project</a>. We are developing malleable knitting software for the <a href="https://www.kniterate.com/">Kniterate</a>, a semi-industrial knitting machine. This post is about the machine. The first post, on the Knitout project, is available <a href="https://soup.agnescameron.info/2025/09/20/kniterate.html">here</a>. The next post, which covers the Knitout and Kcode file formats in more detail, is available <a href="https://soup.agnescameron.info/2026/03/25/kniterate-waste-section.html">here.</a></p>
 
 Today we had the first of the [material programming project](https://cci.arts.ac.uk/~material/) student workshops. We got some UAL Teaching and Learning funding to run a series of workshops on the Kniterate, with the eventual aim of getting students to experiment with the knit programming tools we're developing. For now, the focus is just getting everyone trained on the machine, which was also a really useful refresher for me.
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "knitout and kniterate 1"
+title:  "kniterate notes 1"
 author: agnes cameron
 date:  2025-09-20
 description: making friends with the knitout file format
@@ -9,9 +9,18 @@ status: published
 image: '/img/knitout/final-waste.png'
 ---
 
-I've been working on a [research project](https://cci.arts.ac.uk/~material/) with [B Claxton](https://www.instagram.com/b.clax/?hl=en) and [Claire Anderson](https://researchers.arts.ac.uk/1615-claire-anderson) from the Smart Textiles Lab at Chelsea College of Arts. At the moment we're running a reading group and building an [index of open source knit tools](https://docs.google.com/spreadsheets/d/1Mk6qIkn9i-3fB2CGQtpkl0AzOCBJlxThXYyPawyuev8/edit?gid=0#gid=0), which we're attempting to use with the Chelsea [Kniterate](https://www.kniterate.com/) machine.
 
-[Knitout](https://textiles-lab.github.io/knitout/knitout.html) is an open interchange industrial knit file format designed by the [Textiles Lab](https://textiles-lab.github.io/) at Carnegie Mellon University. This group's research is extremely interesting, and they're one of the major sources of new pieces of knit software/research. We decided to try and get some of their knitout files working on the Kniterate machine, I'm recording what we have tried here.
+<p class="topnote">This is the first in a series of blog posts about the <a href="https://cci.arts.ac.uk/~material/">Material Programming Project</a>, a collaboration between researchers at Chelsea College of Arts and the Creative Computing Institute. We are developing malleable knitting software for the <a href="https://www.kniterate.com/">Kniterate</a>, a semi-industrial knitting machine. The next post, which talks about the Kniterate machine in more detail, is available <a href="https://soup.agnescameron.info/2026/03/07/kniterate-notes.html">here.</a></p>
+
+I've been working on a [research project](https://cci.arts.ac.uk/~material/) with [B Claxton](https://www.instagram.com/b.clax/?hl=en) and [Claire Anderson](https://researchers.arts.ac.uk/1615-claire-anderson) from the Smart Textiles Lab at Chelsea College of Arts. At the moment we're running a reading group and building an [index of open source knit tools](https://docs.google.com/spreadsheets/d/1Mk6qIkn9i-3fB2CGQtpkl0AzOCBJlxThXYyPawyuev8/edit?gid=0#gid=0), which we're attempting to use with the Chelsea [Kniterate](https://www.kniterate.com/), a semi-industrial knitting machine. This series of posts describes our work implementing and using the [Knitout](https://textiles-lab.github.io/knitout/knitout.html) file format as the basis for programming tools.
+
+## what is knitout?
+
+[Knitout](https://textiles-lab.github.io/knitout/knitout.html) is an open interchange industrial knit file format designed by the [Textiles Lab](https://textiles-lab.github.io/) at Carnegie Mellon University. This group's research is extremely interesting, and they're one of the major sources of new pieces of knit software/research. 
+
+The appeal of Knitout is that it can theoretically describe the operations of any of the major knit machines (e.g. Shima Seiki, Stoll, Kniterate). This means that, instead of being reliant on proprietary software, it might be possible to write the same code to be agnostic to different machine backends, opening up the potential for [malleable knitting software](https://www.inkandswitch.com/essay/malleable-software/).
+
+This post documents a number of early experiments with the CMU repository to see how easily we could get the knitout files working on our Kniterate machine.
 
 <figure>
 	<img src="{{ '/img/knitout/final-waste.png' | prepend: site.baseurl }}" alt="main"/>
@@ -25,7 +34,7 @@ I've been working on a [research project](https://cci.arts.ac.uk/~material/) wit
 </span>
 
 
-## what is knitout?
+## where is knitout?
 
 Knitout and related tools appear to still be very much under active research/development, and documentation and tools are distributed across a few different repositories, which made piecing them together initially a bit confusing. We found [this website](https://knit.work/) (though also a work in process) helpful for getting a sense of how everything fits together. For the workflow to produce these designs, we ended up using a combination of the following tools:
 
