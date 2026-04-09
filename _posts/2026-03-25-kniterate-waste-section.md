@@ -124,6 +124,8 @@ Translating between the tools forced us to really engage on every line with *exa
 
 One thing that was consistently challenging was trying to work out if what we were seeing rendered in the Kniterate editor was the *same* as what we were seeing in the knitout visualiser. A particular point of confusion was the first part of the waste yarn, where stitches on the same row alternate between front and back beds. In the Knitout visualiser, these appear (visually) to being passed between same-numbered needles on each bed (and also the stitches appear to be performed by each needle, rather than every other needle). Only after checking the knitout code directly does it actually seem to be equivalent.
 
+I later learned that this stitch type is called an [interlock](https://knit.work/interlock/).
+
 <span class="marginnote">
      <video width=240 controls>
       <source src="{{ '/img/kniterate-code/carriers.mp4' | prepend: site.baseurl }}" type="video/mp4">
