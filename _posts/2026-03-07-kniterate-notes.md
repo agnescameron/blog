@@ -37,7 +37,14 @@ B led the workshop, first giving an overview of the [kniterate editor](https://e
 
 ## setting up the file
 
-The first thing we did was to set up a 100-stitch cast-on file to use as a template. All the different operations are managed in 'layers'. While the name invokes something like Photoshop layers, these reminded me more of the process tracker bar in Fusion 360: though it seems that, unlike in Fusion, if you go back and change something earlier in the design the changes don't cascade. (this makes me wonder what a parametric design tool for knit would look like).
+The first thing we did was to set up a 100-stitch cast-on file with a waste section to use as a template. All the different operations are managed in 'layers'. While the name invokes something like Photoshop layers, these reminded me more of the process tracker bar in Fusion 360: though it seems that, unlike in Fusion, if you go back and change something earlier in the design the changes don't cascade. (this makes me wonder what a parametric design tool for knit would look like).
+
+The minimal steps to create a new editable file were as follows:
+1. Create a new file in the Kniterate editor
+2. 'Add layer' -> 'Center on Bed'. This means that the sample is knitted in the middle of the bed, rather than starting from the first needle (which can make it unhappy)
+3. 'Add layer' -> 'Resize Workspace'. This allows you to change the width (to 252 needles), and the height of the working area.
+5. 'Add layer' -> 'Waste and Cast On'. This adds a block-generated waste section using an interlock stitch.
+5. 'Add layer' -> 'Free Edit'. This creates a layer where stitches can be changed.
 
 <figure width="400">
 	<div class="subfig">

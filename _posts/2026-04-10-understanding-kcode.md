@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "knitout and kniterate 4"
+title:  "kniterate notes 6"
 author: agnes cameron
 date:  2026-04-10
 description: getting deep into some weird bugs
