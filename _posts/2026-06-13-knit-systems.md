@@ -14,13 +14,13 @@ We had the final kniterate programming workshop of the term yesterday, which was
 
 ## Async JS in the Live Visualiser
 
-One change I made a few weeks back to the knitout visualiser was to adapt it to accept asynchronous JS. This was a small change in terms of the code, but makes a big difference pedagogically. After all, so much of the point of using code is being able to do things programatically with information, and being able to fluently get information in and out of a program feels like a really obvious way to demonstrate why this might be a cool line of inquiry.
-
 <span class="marginnote">
 	<img src="{{ '/img/kniterate-6/temp-scarf-editor.png' | prepend: site.baseurl }}"/>
 	<img src="{{ '/img/kniterate-6/temp-scarf.png' | prepend: site.baseurl }}"/>
 	making a scarf about the weather
 </span>
+
+One change I made a few weeks back to the knitout visualiser was to adapt it to accept asynchronous JS. This was a small change in terms of the code, but makes a big difference pedagogically. After all, so much of the point of using code is being able to do things programatically with information, and being able to fluently get information in and out of a program feels like a really obvious way to demonstrate why this might be a cool line of inquiry.
 
 The students who came to the workshop were really interested in this part, and I think it helped the editor come alive a bit. In this session, we just had CCI students (the Chelsea students had just put up their degree show and were understandably pretty exhausted), and also had some great suggestions for ways to improve the tool further (like adding CSV import).
 
