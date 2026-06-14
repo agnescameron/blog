@@ -10,7 +10,7 @@ image: "/img/kniterate-6/temp-scarf-editor.png"
 
 <p class="topnote">This is the sixth in a series of blog posts about the <a href="https://cci.arts.ac.uk/~material/">Material Programming Project</a>. We are developing malleable knitting software for the <a href="https://www.kniterate.com/">Kniterate</a>, a semi-industrial knitting machine. This post is about some really exciting experiments adapting knit software to work in an experimental collaboration tool. The first post, on the Knitout project, is available <a href="https://soup.agnescameron.info/2025/09/20/kniterate.html">here</a>.</p>
 
-We had the final kniterate programming workshop of the term yesterday, which was a nice way to finish off the series. [Chee](https://chee.party/) and [Mimi](https://mimireyburn.com/Hey%2C+I'm+Mimi!) from Ink and Switch joined, and we also spent a while together experimenting with adapting the forked [Knitout Live Visualiser]() into their new tool [Patchwork](https://www.inkandswitch.com/patchwork/notebook/).
+We had the final kniterate programming workshop of the term yesterday, which was a nice way to finish off the series. [Chee](https://chee.party/) and [Mimi](https://mimireyburn.com/Hey%2C+I'm+Mimi!) from Ink and Switch joined, and we also spent a while together experimenting with adapting the forked [Knitout Visualiser](https://agnescameron.github.io/knitout-live-visualizer/) into their new tool [Patchwork](https://www.inkandswitch.com/patchwork/notebook/).
 
 ## Async JS in the Live Visualiser
 
@@ -51,20 +51,15 @@ We also came across a [really lovely tool](https://www.columbia.edu/~syy2114/kni
 
 ### Understanding Patchwork
 
-<span class="marginnote">
-	<img src="{{ '/img/kniterate-6/patchwork-interface.png' | prepend: site.baseurl }}"/>
-	editing the kniterate editor in patchwork!
-</span>
-
 While I'm still getting to grips with the finer details, my understanding of Patchwork is as follows:
 
 > an interface for collaborating on arbitrary file types (providing there's some way to display them in a browser) that provides end users with a range of interpretive *lenses* with which to view the same file (and makes it convenient to make your own lens)
 
-The first thing that Chee did to put the Knitout Live Visualiser into the interface is to make the underlying Automerge file the Knitout-JS code, and then to make both the editor interface and the visualiser pull from that base representation. Intuitively, I thought that the Knitout code itself (Knitout-JS is compiled to Knitout before being visualised) might make the most sense to be the underlying representation -- but the issue with that is that it doesn't encode how it was made -- so you could use it to visualise the knit, but not to extract the code that generated it. This is quite interesting from an informational standpoint -- the idea that despite its relative brevity, the JS code is actually much more expressive, though I suppose that with the repetition/redundancy of knitout this shouldn't be so surprising.
+The first thing that Chee did to put the Knitout Visualiser into the interface is to make the underlying Automerge file the Knitout-JS code, and then to make both the editor interface and the visualiser pull from that base representation. Intuitively, I thought that the Knitout<label for="langs" class="margin-toggle sidenote-number"></label><input id="langs" class="margin-toggle"/>),<span class="sidenote">for more on Knitout, KnitoutJS and other file formats, see <a href="https://soup.agnescameron.info/2026/03/25/kniterate-waste-section.html">these notes</a></span> code itself might make the most sense to be the underlying representation -- but the issue with that is that it doesn't encode how it was made -- so you could use it to visualise the knit, but not to extract the code that generated it. This is quite interesting from an informational standpoint -- the idea that despite its relative brevity, the JS code is actually much more expressive, though I suppose that with the repetition/redundancy of knitout this shouldn't be so surprising.
 
 <span class="marginnote">
-	<img src="{{ '/img/kniterate-6/shima-default.png' | prepend: site.baseurl }}"/>
-	default shima template in the knitout editor
+	<img src="{{ '/img/kniterate-6/patchwork-interface.png' | prepend: site.baseurl }}"/>
+	editing the kniterate editor in patchwork!
 </span>
 
 After the session, I got left with some questions:
@@ -73,6 +68,12 @@ After the session, I got left with some questions:
 
 ### Further Patchwork Notes
 
+<!-- <span class="marginnote">
+	<img src="{{ '/img/kniterate-6/shima-default.png' | prepend: site.baseurl }}"/>
+	default shima template in the knitout editor
+</span>
+
+ -->
 I've been playing around a bit more with the system since Friday and am starting to get a feel for it. At the back of my mind when using it are Rob Pike's papers [*Window Systems Should Be Transparent*](https://library.agnescameron.info/design/Window%20Systems%20Should%20Be%20Transparent,%20Rob%20Pike%20(1988).pdf), and [*Help: A Minimalist Global User Interface*](https://library.agnescameron.info/design/A%20Minimalist%20Gloabl%20User%20Interface,%20Rob%20Pike%20(1991).pdf). I first read them when I was doing a [project](https://1127.foreignobjects.net/) with the Bell Labs archives back in 2020 and they left a real impression, particularly this sense about the relationship between applications and files, and how they should interact with one another. Consider this line about *Help*:
 
 > "A help window on such a file behaves much like a menu, but is really just a window on a plain file. The useful properties stem from the interpretation of the file applied by the rules of help; they are not inherent to the file."
