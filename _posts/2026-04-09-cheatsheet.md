@@ -9,7 +9,8 @@ image: "/img/knitout-cheatsheet/kniterate-diagram.jpg"
 ---
 
 For the [material programming project](https://cci.arts.ac.uk/~material/) workshops, we have made an [adapted version](https://agnescameron.github.io/knitout-live-visualizer/) of CMU's original Knitout visualiser, that allows you to write javascript code and export directly to files that run on the Kniterate machine. The visualiser uses a Javascript library called knitout, which allows you to write code that can be translated to run on a knitting machine.
-<!-- This page starts with a cheatsheet (just below), and further down is a walkthrough of loading the interface and writing a file. Below that is a set of examples. -->
+
+This page starts with a cheatsheet (just below), and further down is a walkthrough of loading the interface and writing a file. Below that is a set of examples.
 
 ## knitout-js commands
 
@@ -52,13 +53,21 @@ Using the visualiser allows you to *write* Javascript, which is transformed into
 
 <!-- ## using the interface
 
-The knitout visualiser has 2 sides -- one to write code, the other to see the results. It will load with an example -- you can either edit this, delete everything and start from scratch, or load a file into the interface.
+The knitout visualiser has 2 sides -- one to write code (either in Javascript, or directly in knitout), the other to see the results. It will load with an example -- you can either edit this, delete everything and start from scratch, or load a file into the interface from your computer.
 
 
 ### how to think about knitout js
 you must specify every stitch. this is cool and also annoying.
 
+Here's how to do 1 stitch:
+
+Here's how to do 2 stitches:
+
 ### knitting a row
+
+You can keep going like this for a bit
+
+Then you need to do the reverse
 
 
 ### transferring between beds
