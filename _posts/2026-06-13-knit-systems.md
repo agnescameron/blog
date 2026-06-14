@@ -18,6 +18,7 @@ One change I made a few weeks back to the knitout visualiser was to adapt it to 
 
 <span class="marginnote">
 	<img src="{{ '/img/kniterate-6/temp-scarf-editor.png' | prepend: site.baseurl }}"/>
+	<img src="{{ '/img/kniterate-6/temp-scarf.png' | prepend: site.baseurl }}"/>
 	making a scarf about the weather
 </span>
 
@@ -62,7 +63,7 @@ The first thing that Chee did to put the Knitout Visualiser into the interface i
 	editing the kniterate editor in patchwork!
 </span>
 
-After the session, I got left with some questions:
+Some questions came to mind after the session:
 * can you make the patchwork representation of the knitout visualiser track the changes I'm making to the browser based tool in my git repo? (I suppose this is a broader question of making things play or not with outside tools). Thinking about this more, I suppose it becomes a question of -- can I have a lens on this which behaves like more of a pure client side demo for students, that's currently functioning like the app I'm hosting on my github pages. It would be nice to be able to turn 'on' and 'off' collaboration on the file.
 * kind of by accident (/ by using claude) the template file that Chee made as the default knitoutJS file template was for the Shima rather than the Kniterate. This is fine obviously but it got me thinking about templates and drivers, and how to specify what *kind* of file you want at the interface level (or whether you even want people to do that)
 
