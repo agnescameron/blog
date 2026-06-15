@@ -36,7 +36,7 @@ Predictably, this also threw up a few bugs with things like the waste section ge
 </span>
 
 
-Pre the afternoon workshop, we spent a long time discussing the ins and outs of Patchworking the Knitout Visualiser, talking about the ideas of both projects in relation to one another. It was a really a nice experience to get to understand both Patchwork and the Knitout Visualiser better, and to have to rearticulate what it is we want the software we're making to do.
+Pre the afternoon workshop, we spent a long time discussing the ins and outs of putting the Knitout Visualiser into Patckwork, talking about the ideas of both projects in relation to one another. It was a really a nice experience to get to understand both of them better, and to have to rearticulate what it is we want the software we're making to do.
 
 <span class="marginnote">
 	<img src="{{ '/img/kniterate-6/yang-knit-visualiser.png' | prepend: site.baseurl }}"/>
