@@ -8,9 +8,9 @@ status: published
 image: "/img/knitout-cheatsheet/kniterate-diagram.jpg"
 ---
 
-For the [material programming project](https://cci.arts.ac.uk/~material/) workshops, we have made an [adapted version](https://agnescameron.github.io/knitout-live-visualizer/) of CMU's original Knitout visualiser, that allows you to write javascript code and export directly to files that run on the Kniterate machine. The visualiser uses a Javascript library called knitout, which allows you to write code that can be translated to run on a knitting machine.
+For the [material programming project](https://cci.arts.ac.uk/~material/) workshops, we have made an [adapted version](https://agnescameron.github.io/knitout-visualizer-kniterate/) of CMU's [original](https://textiles-lab.github.io/knitout-live-visualizer/) Knitout visualiser, that allows you to write javascript code and export directly to files that run on the Kniterate machine. The visualiser uses a Javascript library called knitout, which allows you to write code that can be translated to run on a knitting machine.
 
-This page starts with a cheatsheet (just below), and further down is a walkthrough of loading the interface and writing a file. Below that is a set of examples.
+<!-- This page starts with a cheatsheet (just below), and further down is a walkthrough of loading the interface and writing a file. Below that is a set of examples. -->
 
 ## knitout-js commands
 

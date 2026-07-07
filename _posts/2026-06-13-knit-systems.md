@@ -10,7 +10,7 @@ image: "/img/kniterate-6/temp-scarf-editor.png"
 
 <p class="topnote">This is the sixth in a series of blog posts about the <a href="https://cci.arts.ac.uk/~material/">Material Programming Project</a>. We are developing malleable knitting software for the <a href="https://www.kniterate.com/">Kniterate</a>, a semi-industrial knitting machine. This post is about some really exciting experiments adapting knit software to work in an experimental collaboration tool. The first post, on the Knitout project, is available <a href="https://soup.agnescameron.info/2025/09/20/kniterate.html">here</a>.</p>
 
-We had the final kniterate programming workshop of the term yesterday, which was a nice way to finish off the series. [Chee](https://chee.party/) and [Mimi](https://mimireyburn.com/Hey%2C+I'm+Mimi!) from Ink and Switch joined, and we also spent a while together experimenting with adapting the forked [Knitout Visualiser](https://agnescameron.github.io/knitout-live-visualizer/) into their new tool [Patchwork](https://www.inkandswitch.com/patchwork/notebook/).
+We had the final kniterate programming workshop of the term yesterday, which was a nice way to finish off the series. [Chee](https://chee.party/) and [Mimi](https://mimireyburn.com/Hey%2C+I'm+Mimi!) from Ink and Switch joined, and we also spent a while together experimenting with adapting the forked [Knitout Visualiser](https://agnescameron.github.io/knitout-visualizer-kniterate/) into their new tool [Patchwork](https://www.inkandswitch.com/patchwork/notebook/).
 
 ## Async JS in the Live Visualiser
 
