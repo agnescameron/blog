@@ -10,7 +10,7 @@ image: "/img/kniterate-7/colour-arr-1.png"
 
 <p class="topnote">This is the seventh in a series of blog posts about the <a href="https://cci.arts.ac.uk/~material/">Material Programming Project</a>. We are developing malleable knitting software for the <a href="https://www.kniterate.com/">Kniterate</a>, a semi-industrial knitting machine. This post is about working with colour. The first post, on the Knitout project, is available <a href="https://soup.agnescameron.info/2025/09/20/kniterate.html">here</a>.</p>
 
-In the past few weeks we've been working a lot more with Patchwork, playing around with some different ideas to make compelling demos that can demonstrate the capabilities of both softwares. Until now, we'd been very focussed on technical aspects of the editor, and it's nice to explore more what Knitout can do.
+In the past few weeks we've been working a lot more with [Patchwork](https://www.inkandswitch.com/project/patchwork/), an extremely fun and anarchic piece of malleable version-control software. We've been working with Chee and Mimi to think about compelling demos that can demonstrate the capabilities of both softwares. Until now, we'd been very focussed on technical aspects of the editor, and it's nice to explore more what KnitoutJS can do in terms of 'fun things to show other people'.
 
 ## Colourwork in Patchwork
 
@@ -76,9 +76,9 @@ Working with colour has given me a newfound appreciation for the Designaknit col
 </span>
 
 
-Ilana is a longterm friend of Material Programming, and has been a constant source of thougtful and interesting commentary on knit and the 'extended technique' of industrial machinery. We invited her to give a Chelsea a couple of months ago, where she spoke working with her Stoll machine, and pushing it to its limits. It's always amazing listening to Ilana talk about her work, and her ability to figure several tons of steel as a malleable medium for textile creation.
+[Ilana](https://ilanablumberg.co.uk/) is a longterm friend of Material Programming, and has been a constant source of thougtful and interesting commentary on knit and the 'extended technique' of industrial machinery. We invited her to give a Chelsea a couple of months ago, where she spoke working with her Stoll machine, and pushing it to its limits. It's always amazing listening to her talk about her work, and her ability to figure several tons of steel as a malleable medium for textile creation.
 
-B and I took Chee and Mimi on a visit to her studio, where she talked in depth about some programs that she'd been working on, and her process for creating new designs. I thought that it would be particularly interesting for her to give us a tour of the Stoll Create Lite software, that she uses to make designs. I'd started looking into the Sintral file format (the core of the Stoll format) in more detail a couple of weeks ago, and it was really interesting to see the files resulting from her design process.
+B and I took Chee and Mimi on a visit to Ilana's studio, where she talked in depth about some programs that she'd been working on, and her process for creating new designs. I thought that it would be particularly interesting for her to give us a tour of the Stoll Create Lite software, that she uses to make designs. I'd started looking into the Sintral file format (the core of the Stoll format) in more detail a couple of weeks ago, and it was really interesting to see the files resulting from her design process.
 
 ### Raster designs
 One of the first examples Ilana showed us was a design for a knitted hood she'd worked on, where she wanted to knit a complex, convex shape as a single piece. Much of her most interesting work comes from an insistence on producing pieces requiring as few seams as possible -- borne from both an aesthetic desire, and from necessity as a small producer, as seams must be done semi-manually using a linker.
