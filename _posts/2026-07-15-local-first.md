@@ -178,7 +178,13 @@ I remember Ilana once saying that she doesn't tend to be very interested in jacq
 
 The conference as a whole was great. Probably my favourite talk that I made it to apart from the Malleable Software one was Lilith's talk about [Backstitch](https://backstitch.dev/)<label for="backstitch" class="margin-toggle sidenote-number"></label><input id="backstitch" class="margin-toggle"/><span class="sidenote">When I talked to B about it she said it was so interesting <a href="https://www.inkandswitch.com/project/jacquard/">how</a> <a href="https://www.inkandswitch.com/project/patchwork/">many</a> <a href="https://www.inkandswitch.com/project/untangle/">of</a> the metaphors Ink+Switch use are about textiles.</span>, a version control system for the Godot game engine. As one of the people often tasked with un-breaking students' collaborative Unity git projects, this was an issue close to my heart and through hearing about it I also got a much stronger sense for the power of Automerge.
 
-The Malleable software talk was obviously fantastic and just so nice to see everyone up on stage doing their thing. I was really sad to miss Seph Gentle's talk about document schemas, in which my historical favourite I+S project Cambria got mentioned (pejoratively), and which seemed super exciting. Ivy's demo of [PlayBook](https://www.inkandswitch.com/project/playbook/) was great -- I particularly enjoyed her aside about fixed toolbars in sketching applications being something 'for the first 10 minutes of using an application' and then a hindrance subsequently -- it reminded me of my love for Scapple, and its totally clean interface. The Gnome developers' characterisation of their work as 'emancipatory computing'.
+<span class="marginnote">
+	<img src="{{ '/img/kniterate-8/scapple.png' | prepend: site.baseurl }}"/>
+	scapple in action
+</span>
+
+
+The Malleable software talk was obviously fantastic and just so nice to see everyone up on stage doing their thing. I was really sad to miss Seph Gentle's talk about document schemas, in which my historical favourite I+S project Cambria got mentioned (pejoratively), and which seemed super exciting. Ivy's demo of [PlayBook](https://www.inkandswitch.com/project/playbook/) (I particularly enjoyed her aside about fixed toolbars in sketching applications being something 'for the first 10 minutes of using an application' and then a hindrance subsequently: it reminded me of my love for Scapple, and its totally clean interface). The Gnome developers' characterisation of their work as 'emancipatory computing'. The TLDraw Offline demo of Steve switching a lightbulb on and off.
 
 
 <!-- 
