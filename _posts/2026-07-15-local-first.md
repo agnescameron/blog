@@ -4,7 +4,7 @@ title:  "kniterate notes 8"
 author: agnes cameron
 date:  2026-07-09
 description: material programming goes to local first conference
-status: draft
+status: published
 image: "/img/kniterate-8/image4.jpg"
 ---
 
@@ -93,7 +93,10 @@ At the end of the lab day, Ana and B collaboratively edited a Patternwitch file 
 
 Gladly I'd decided to make [a presentation](/img/kniterate-8/knit-big-examples-pres.pdf) that was just a lot of pictures of different machines and software. Sara from the Textile Co-op also lent me a bunch of Kniterate samples, and Ana also brought loads, most of which were handknit, which included one we could unravel (really important for explaining knit structure).
 
-Lots of the Co-op samples were knit by Leonie, who is an intern there and has experimented a lot with structural forms. Some of the most interesting ones structurally were just really simple knit files that had been cleverly structured, alternating the position of different rectangles on the front and back beds.
+<span class="marginnote">
+	<img src="{{ '/img/kniterate-8/marcel-sock.png' | prepend: site.baseurl }}"/>
+	talking to Marcel about ribs using his socks
+</span>
 
 <figure>
     <div class="subfigthird">
@@ -110,6 +113,8 @@ Lots of the Co-op samples were knit by Leonie, who is an intern there and has ex
     </div>
     <span class="mainnote">different examples from the Textile co-op where alternating front/back bed knitting is used to manipulate knit structures</span>
 </figure>
+
+Lots of the Co-op samples were knit by Leonie, who is an intern there and has experimented a lot with structural forms. Some of the most interesting ones structurally were just really simple knit files that had been cleverly structured, alternating the position of different rectangles on the front and back beds.
 
 In trying to articulate this aspect of knit to a new audience I often fall back on ribs, both because this is almost always something someone's normally wearing (in the form of a sock or a jumper sleeve) and also because it's a really great and simple example of this form of shape manipulation. The back-front structure of a basic rib performs the same function as a telephone cord or a paper fan -- it makes an otherwise inelastic material into something stretchy, a technique long predating elastic fibres.<label for="rib" class="margin-toggle sidenote-number"></label><input id="rib" class="margin-toggle"/><span class="sidenote">I didn't manage to find out when rib originated but did find this great paper about ancient <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0204699">egyptian tabis</a> though these are alas <a href="https://en.wikipedia.org/wiki/N%C3%A5lebinding">nålebound</a> and not knit</span> My friend <a href="https://www.jifei.info/">Jifei</a> (who in many ways was my introduction to industrial knitting) had this nice term for this strand of work; the _mesoscale manipulation_ of material properties.
 
