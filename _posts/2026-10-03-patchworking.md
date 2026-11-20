@@ -28,7 +28,7 @@ The last couple of months have seen a lot of Patchwork-work and development. The
 	* multi pane view!
 	* resizeable windows!
 	* much much much faster rendering
-* Chee made a standalone Patchwork instance called knit.patchwork that we've been using for the workshops. This can be used, by *you!* I've written some [notes](https://materialprogramming.co.uk/workshops/2026-10-30-patchwork-editor.html) on getting started
+* Chee made a standalone Patchwork instance called [knit.patchwork](https://knit.patchwork.inkandswitch.com/) that we've been using for the workshops. This can be used, by *you!* I've written some [notes](https://materialprogramming.co.uk/workshops/2026-10-30-patchwork-editor.html) on getting started
 * As resources for the workshops, I've been working on building up a <a href="https://library.agnescameron.info/.teaching-misc/Workshop%202%20Samples.patchworkfolder">sample stitch library</a><label for="samples" class="margin-toggle sidenote-number"></label><input id="samples" class="margin-toggle"/><span class="sidenote">import this into knit.patchwork by dragging this folder into the left sidebar</span> for KnitoutJS, writing some proper Knitout notes and translating existing tools into knit-patchwork. I also:
 	* found + fixed a bug in KnitoutJS! (where the carriage speed was getting set to zero by accident every time the roller speed got set to zero)
 	* finally got the bindoff working properly
@@ -190,7 +190,7 @@ Once you know these things, you can write a neat little script to link stuff tog
 	the Per Kirkeby painting <i>Vermisst die Welt</i> (Missing the World), 1997
 </span>
 
-On the subject of neat little scripts, today I made a small tool called *blobber* today and I'm really happy about it.
+On the subject of neat little scripts, today I made a small tool called *blobber* and I'm really happy about it.
 
 This is for a few reasons. The main one is that I had the idea for this tool in the morning when Kat and I were having coffee, I sort of worked out how I'd make it in my head as I was cycling to Chelsea, then I had to track down the workshop keys and gossiped with Claire and Kirsty for about 40min. After that, I sat down and made the tool and knit out a sample. From start to finish, this took about 4 hours. It was really pleasurable. <i>This is malleable software.</i>
 
